@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kadina Medical Center — Cosmetic Dermatology, Laser & Plastic Surgery in Riyadh</title>
+<meta name="description" content="Kadina Medical Center, Riyadh. A full range of surgical and non-surgical cosmetic procedures — dermatology, laser therapy, hair restoration, cosmetic injections and plastic surgery, led by consultant physicians.">
+<link rel="canonical" href="https://kadina.com.sa/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kadina Medical Center">
+<meta property="og:title" content="Kadina Medical Center — Riyadh">
+<meta property="og:description" content="A full range of surgical and non-surgical cosmetic procedures, under one roof in Riyadh.">
+<meta property="og:url" content="https://kadina.com.sa/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_SA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kadina Medical Center — Riyadh">
+<meta name="twitter:description" content="A full range of surgical and non-surgical cosmetic procedures, under one roof in Riyadh.">
+<meta name="theme-color" content="#F6F3ED">
+
+<script>
+/* Applied before first paint — a stored choice wins, otherwise the OS decides.
+   Kept inline and tiny on purpose: any deferral here shows as a flash. */
+(function(){try{
+  var st=null; try{st=localStorage.getItem("kadina-theme");}catch(e){}
+  var m=st||(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  document.documentElement.setAttribute("data-theme",m);
+  var mt=document.querySelector('meta[name="theme-color"]');
+  if(mt) mt.setAttribute("content", m==="dark"?"#141610":"#F6F3ED");
+}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://kadina.com.sa/#organization",
+  "name": "Kadina Medical Center",
+  "alternateName": "مركز كادينا الطبي",
+  "url": "https://kadina.com.sa/",
+  "telephone": "+966114555444",
+  "email": "info@kadina.com.sa",
+  "medicalSpecialty": ["Dermatology", "PlasticSurgery"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "North Ring Road",
+    "addressLocality": "Riyadh",
+    "addressCountry": "SA"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "22:00"
+  }],
+  "foundingDate": "2013",
+  "description": "Kadina Medical Center is a cosmetic medical center in Riyadh, Saudi Arabia, offering a full range of surgical and non-surgical cosmetic procedures."
+}
+</script>
+
+<style>
+/* ============================================================
+   KADINA — DESIGN TOKENS
+   Palette: ivory ground, pearl surfaces, warm charcoal ink,
+   muted botanical green (the Cady leaf), champagne as hairline only.
+   ============================================================ */
+:root{
+  --ivory:#F6F3ED;
+  --pearl:#FCFAF6;
+  --bone:#EDE8DE;
+  --ink:#1B1C19;
+  --ink-soft:#4A4C46;
+  --ink-mute:#83857C;
+  --botanical:#46584B;
+  --botanical-lt:#7D8F80;
+  --champagne:#BFA36B;
+  --line:rgba(27,28,25,.12);
+  --line-soft:rgba(27,28,25,.07);
+  --glass:rgba(252,250,246,.72);
+  --shadow:0 1px 2px rgba(27,28,25,.04), 0 12px 34px -18px rgba(27,28,25,.22);
+
+  /* The contrast band (stats, appointment, menu, footer). Charcoal on ivory
+     in light mode; in dark mode it sinks darker rather than inverting to
+     ivory, which would glare. */
+  --band-bg:#1B1C19;
+  --band-ink:#F6F3ED;
+  --band-ink-soft:rgba(246,243,237,.62);
+  --band-ink-mute:rgba(246,243,237,.45);
+  --band-line:rgba(246,243,237,.16);
+  --band-line-strong:rgba(246,243,237,.30);
+  --band-accent:#BFA36B;
+
+  --display:"Marcellus", "Times New Roman", Times, serif;
+  --body:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --step--1:clamp(.78rem,.76rem + .1vw,.85rem);
+  --step-0:clamp(.95rem,.92rem + .16vw,1.03rem);
+  --step-1:clamp(1.12rem,1.05rem + .34vw,1.3rem);
+  --step-2:clamp(1.45rem,1.3rem + .74vw,2rem);
+  --step-3:clamp(1.95rem,1.6rem + 1.7vw,3.1rem);
+  --step-4:clamp(2.5rem,1.8rem + 3.4vw,5rem);
+  --step-5:clamp(3rem,1.9rem + 5.4vw,7.2rem);
+
+  --gutter:clamp(1.15rem,4vw,4.5rem);
+  --maxw:1440px;
+  --rhythm:clamp(4.5rem,11vh,9rem);
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 92px);}
+
+/* ============================================================ DARK MODE
+   A night version of the same clinic, not an inversion. The ground becomes a
+   warm olive-black, the botanical green lifts so it still reads as green, and
+   champagne warms a step to survive the darker ground. */
+:root[data-theme="dark"]{
+  --ivory:#141610;
+  --pearl:#1B1E16;
+  --bone:#262A1F;
+  --ink:#EDEAE0;
+  --ink-soft:#B6B4A7;
+  --ink-mute:#8B8C7E;
+  --botanical:#9CB49F;
+  --botanical-lt:#7D8F80;
+  --champagne:#D6B87E;
+  --line:rgba(237,234,224,.15);
+  --line-soft:rgba(237,234,224,.08);
+  --glass:rgba(20,22,16,.74);
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 34px -18px rgba(0,0,0,.8);
+  --band-bg:#0C0E09;
+  --band-ink:#EDEAE0;
+  --band-ink-soft:rgba(237,234,224,.60);
+  --band-ink-mute:rgba(237,234,224,.42);
+  --band-line:rgba(237,234,224,.14);
+  --band-line-strong:rgba(237,234,224,.28);
+  --band-accent:#D6B87E;
+  color-scheme:dark;
+}
+:root[data-theme="light"]{color-scheme:light;}
+body,.nav,.sec,.foot,.stat,.doc,.contact-cell,.aside-card,#loader,.svc-stage,.map,.gal figure{
+  transition:background-color .45s var(--ease),color .45s var(--ease),border-color .45s var(--ease);
+}
+
+/* Arabic typographic tuning — not a mechanical flip. */
+html[lang="ar"]{
+  --display:"IBM Plex Sans Arabic","Inter",sans-serif;
+  --body:"IBM Plex Sans Arabic","Inter",sans-serif;
+}
+
+*,*::before,*::after{box-sizing:inherit;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:var(--step-0);
+  font-weight:400;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+html[lang="ar"] body{line-height:1.9;font-weight:300;}
+
+img,svg,canvas{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
+h1,h2,h3,h4{margin:0;font-weight:400;line-height:1.06;letter-spacing:-.015em;font-family:var(--display);}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4{
+  font-weight:300;letter-spacing:0;line-height:1.28;
+}
+p{margin:0;}
+:focus-visible{outline:2px solid var(--botanical);outline-offset:3px;border-radius:2px;}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);}
+.prose{max-width:62ch;}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+
+/* ---- skip link ---- */
+.skip{position:fixed;inset-inline-start:1rem;top:-100px;z-index:999;background:var(--ink);color:var(--ivory);padding:.7rem 1.1rem;border-radius:2px;transition:top .2s;}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 1rem);}
+
+/* ============================================================ LOADER */
+#loader{
+  position:fixed;inset:0;z-index:300;background:var(--ivory);color:var(--ink);
+  display:grid;place-items:center;
+  transition:opacity .8s var(--ease),visibility .8s;
+  padding-top:env(safe-area-inset-top,0px);
+}
+#loader.done{opacity:0;visibility:hidden;}
+.loader-in{display:grid;justify-items:center;gap:1.6rem;width:min(300px,64vw);}
+.loader-mark{width:74px;height:74px;}
+.loader-mark path,.loader-mark circle{
+  fill:none;stroke:var(--botanical);stroke-width:1;
+  stroke-dasharray:var(--len,200);stroke-dashoffset:var(--len,200);
+  animation:draw 2.1s var(--ease) forwards;
+}
+@keyframes draw{to{stroke-dashoffset:0;}}
+.loader-word{
+  font-family:var(--display);font-size:1.5rem;letter-spacing:.42em;
+  margin-inline-start:.42em;color:var(--ink);opacity:0;
+  animation:fadeIn .9s var(--ease) .9s forwards;
+}
+.loader-bar{width:100%;height:1px;background:var(--line);position:relative;overflow:hidden;}
+.loader-bar i{position:absolute;inset-block:0;inset-inline-start:0;width:0%;background:var(--champagne);transition:width .4s var(--ease);}
+@keyframes fadeIn{to{opacity:1;}}
+
+/* ============================================================ CURSOR */
+#cursor,#cursor-ring{position:fixed;top:0;left:0;z-index:290;pointer-events:none;border-radius:50%;opacity:0;}
+#cursor{width:5px;height:5px;background:var(--ink);margin:-2.5px 0 0 -2.5px;transition:opacity .3s;}
+#cursor-ring{
+  width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid var(--ink-mute);
+  transition:width .32s var(--ease),height .32s var(--ease),margin .32s var(--ease),border-color .32s,opacity .3s,background .32s;
+}
+body.cursor-on #cursor,body.cursor-on #cursor-ring{opacity:1;}
+body.cursor-on.c-link #cursor-ring{width:56px;height:56px;margin:-28px 0 0 -28px;border-color:var(--botanical);background:color-mix(in srgb,var(--botanical) 9%,transparent);}
+body.cursor-on.c-media #cursor-ring{width:84px;height:84px;margin:-42px 0 0 -42px;border-color:rgba(191,163,107,.7);}
+body.cursor-on.c-link #cursor{opacity:0;}
+@media (hover:none),(pointer:coarse){#cursor,#cursor-ring{display:none;}}
+
+/* ============================================================ NAV */
+.nav{
+  position:fixed;top:0;inset-inline:0;z-index:200;
+  padding-top:env(safe-area-inset-top,0px);
+  transition:background .5s var(--ease),box-shadow .5s var(--ease),backdrop-filter .5s;
+}
+.nav-in{
+  display:flex;align-items:center;gap:clamp(1rem,3vw,2.6rem);
+  height:78px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);
+  transition:height .5s var(--ease);
+}
+.nav.compact{background:var(--glass);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 1px 0 var(--line-soft),0 14px 40px -30px rgba(27,28,25,.5);}
+.nav.compact .nav-in{height:62px;}
+.brand{display:flex;align-items:center;gap:.62rem;flex-shrink:0;}
+.brand-logo{width:132px;height:52px;object-fit:contain;flex:none;}
+.brand svg{width:26px;height:26px;flex:none;}
+.brand b{font-family:var(--display);font-weight:400;font-size:1.06rem;letter-spacing:.3em;margin-inline-start:.3em;}
+html[lang="ar"] .brand b{letter-spacing:0;margin-inline-start:0;font-size:1.15rem;}
+.nav-links{display:flex;gap:clamp(.9rem,1.9vw,1.8rem);margin-inline:auto;align-items:center;}
+.nav-links a{
+  position:relative;font-size:var(--step--1);letter-spacing:.055em;color:var(--ink-soft);
+  padding:.45rem 0;transition:color .3s;
+}
+html[lang="ar"] .nav-links a{letter-spacing:0;font-size:.92rem;}
+.nav-links a::after{
+  content:"";position:absolute;inset-inline-start:0;bottom:.15rem;height:1px;width:100%;
+  background:var(--botanical);transform:scaleX(0);transform-origin:var(--to,left);
+  transition:transform .45s var(--ease);
+}
+html[dir="rtl"] .nav-links a::after{--to:right;}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--ink);}
+.nav-links a:hover::after,.nav-links a[aria-current="page"]::after{transform:scaleX(1);}
+.nav-act{display:flex;align-items:center;gap:.8rem;flex-shrink:0;}
+
+.lang{
+  display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden;
+}
+.lang button{padding:.34rem .72rem;font-size:.74rem;letter-spacing:.09em;color:var(--ink-mute);transition:background .3s,color .3s;}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--ivory);}
+
+/* theme toggle — same pill language as the language switch */
+.tgl{
+  display:grid;place-items:center;width:34px;height:34px;flex:none;
+  border:1px solid var(--line);border-radius:999px;color:var(--ink-mute);
+  transition:color .3s,border-color .3s,background .3s;
+}
+.tgl:hover{color:var(--ink);border-color:var(--botanical);}
+.tgl svg{width:16px;height:16px;}
+.tgl .sun{display:none;} :root[data-theme="dark"] .tgl .sun{display:block;}
+:root[data-theme="dark"] .tgl .moon{display:none;}
+#menu .tgl,.foot .tgl{border-color:var(--band-line-strong);color:var(--band-ink-soft);}
+#menu .tgl:hover,.foot .tgl:hover{color:var(--band-ink);border-color:var(--band-ink);}
+
+/* photography frames — the generated tile is the base layer, the real
+   photograph fades in over it when one is supplied and loads */
+.media{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--bone),rgba(125,143,128,.18));}
+.media > img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;object-position:center center;
+  background:linear-gradient(160deg,var(--bone),rgba(125,143,128,.18));
+  opacity:0;transition:opacity .8s var(--ease),transform .9s var(--ease),filter .45s ease;
+}
+.media > img.loaded{opacity:1;}
+.media.has-img::after{opacity:0;}
+.doc:hover .media > img,.gal figure:hover .media > img{transform:scale(1.03);}
+:root[data-theme="dark"] .tblobs{opacity:.5;filter:saturate(.7);}
+:root[data-theme="dark"] .media > img{filter:brightness(.88) contrast(1.02);}
+
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.82rem 1.5rem;font-size:var(--step--1);letter-spacing:.05em;
+  border:1px solid var(--ink);color:var(--ivory);background:var(--ink);
+  border-radius:1px;overflow:hidden;isolation:isolate;
+  transition:transform .3s var(--ease),box-shadow .4s var(--ease);
+}
+html[lang="ar"] .btn{letter-spacing:0;}
+.btn::before{
+  content:"";position:absolute;inset:0;z-index:-1;background:var(--botanical);
+  transform:translateY(101%);transition:transform .5s var(--ease);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(27,28,25,.55);}
+.btn:hover::before{transform:translateY(0);}
+.btn:active{transform:translateY(0) scale(.985);}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn.ghost::before{background:var(--ink);}
+.btn.ghost:hover{color:var(--ivory);border-color:var(--ink);}
+.btn.sm{padding:.6rem 1.1rem;}
+.btn-nav{display:none;}
+@media(min-width:1100px){.btn-nav{display:inline-flex;}}
+
+.burger{display:grid;gap:5px;padding:.6rem .2rem;}
+.burger i{display:block;width:22px;height:1px;background:var(--ink);transition:transform .45s var(--ease),opacity .3s;}
+@media(min-width:1100px){.burger{display:none;}}
+@media(max-width:1099px){.nav-links{display:none;}}
+
+/* full-screen mobile menu */
+#menu{
+  position:fixed;inset:0;z-index:210;background:var(--band-bg);color:var(--band-ink);
+  display:grid;grid-template-rows:auto 1fr auto;
+  clip-path:inset(0 0 100% 0);transition:clip-path .78s var(--ease-io);
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+#menu.open{clip-path:inset(0 0 0 0);}
+#menu .m-top{display:flex;align-items:center;justify-content:space-between;height:78px;padding-inline:var(--gutter);}
+#menu .m-top .brand b,#menu .m-top .brand svg{color:var(--band-ink);}
+#menu .m-close i{background:var(--band-ink);}
+#menu.open .m-close i:first-child{transform:translateY(3px) rotate(45deg);}
+#menu.open .m-close i:last-child{transform:translateY(-3px) rotate(-45deg);}
+#menu .m-close i:nth-child(2){opacity:0;}
+.m-nav{padding-inline:var(--gutter);align-self:center;display:grid;gap:.1rem;overflow-y:auto;}
+.m-nav a{
+  font-family:var(--display);font-size:clamp(1.85rem,7.5vw,3rem);line-height:1.34;
+  color:var(--band-ink);opacity:0;transform:translateY(22px);
+  transition:opacity .6s var(--ease),transform .6s var(--ease),color .3s;
+  border-bottom:1px solid var(--band-line);padding:.35rem 0;
+  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+}
+.m-nav a span{font-family:var(--body);font-size:.7rem;letter-spacing:.14em;color:var(--band-ink-mute);}
+html[lang="ar"] .m-nav a span{letter-spacing:0;}
+#menu.open .m-nav a{opacity:1;transform:none;}
+.m-foot{padding:0 var(--gutter) clamp(1.5rem,5vh,3rem);display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;}
+.m-foot a{color:var(--band-ink-soft);font-size:var(--step--1);}
+#menu .lang{border-color:var(--band-line-strong);}
+#menu .lang button{color:var(--band-ink-soft);}
+#menu .lang button[aria-pressed="true"]{background:var(--band-ink);color:var(--band-bg);}
+
+/* ============================================================ HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;}
+#scene{position:absolute;inset:0;z-index:0;}
+#scene canvas{width:100%!important;height:100%!important;}
+.hero-fallback{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(60% 55% at 62% 40%,rgba(255,255,255,.95),transparent 70%),
+    radial-gradient(48% 46% at 38% 62%,rgba(125,143,128,.22),transparent 72%),
+    radial-gradient(40% 40% at 74% 74%,rgba(191,163,107,.16),transparent 70%),
+    linear-gradient(170deg,var(--pearl),var(--bone));
+}
+:root[data-theme="dark"] .hero-fallback{
+  background:
+    radial-gradient(58% 52% at 62% 38%,rgba(214,184,126,.16),transparent 72%),
+    radial-gradient(50% 48% at 34% 64%,rgba(156,180,159,.13),transparent 74%),
+    radial-gradient(70% 60% at 50% 100%,rgba(0,0,0,.5),transparent 70%),
+    linear-gradient(170deg,#1D2018,#0E100A);
+}
+.hero-grad{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to top,var(--ivory) 4%,color-mix(in srgb,var(--ivory) 55%,transparent) 34%,transparent 62%);
+}
+.hero-in{position:relative;z-index:2;width:100%;padding-block:clamp(3rem,10vh,6.5rem) clamp(4.5rem,11vh,7rem);}
+.hero h1{font-size:var(--step-5);max-width:16ch;}
+html[lang="ar"] .hero h1{max-width:19ch;}
+.hero .kicker{
+  display:block;font-family:var(--body);font-size:var(--step--1);letter-spacing:.22em;
+  color:var(--botanical);margin-bottom:1.5rem;
+}
+html[lang="ar"] .hero .kicker{letter-spacing:0;font-size:.9rem;}
+.hero .lede{margin-top:1.7rem;max-width:46ch;color:var(--ink-soft);font-size:var(--step-1);line-height:1.6;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.4rem;}
+.scroll-cue{
+  position:absolute;z-index:2;bottom:calc(1.6rem + env(safe-area-inset-bottom,0px));
+  inset-inline-end:var(--gutter);display:flex;align-items:center;gap:.7rem;
+  font-size:.7rem;letter-spacing:.2em;color:var(--ink-mute);
+}
+html[lang="ar"] .scroll-cue{letter-spacing:0;}
+.scroll-cue i{display:block;width:44px;height:1px;background:var(--line);position:relative;overflow:hidden;}
+.scroll-cue i::after{content:"";position:absolute;inset-block:0;width:40%;background:var(--botanical);animation:cue 2.4s var(--ease-io) infinite;}
+@keyframes cue{0%{transform:translateX(-110%)}55%{transform:translateX(260%)}100%{transform:translateX(260%)}}
+@media(max-width:720px){.scroll-cue{display:none;}}
+
+/* ============================================================ SECTIONS */
+.sec{padding-block:var(--rhythm);position:relative;}
+.sec.dark{background:var(--band-bg);color:var(--band-ink);}
+.sec.dark .lede{color:var(--band-ink-soft);}
+.sec.dark .note{color:var(--band-ink-mute);}
+.sec.dark .rule{background:var(--band-line);}
+.sec.dark .btn.ghost,.foot .btn.ghost{color:var(--band-ink);border-color:var(--band-line-strong);}
+.sec.dark .btn.ghost::before,.foot .btn.ghost::before{background:var(--band-ink);}
+.sec.dark .btn.ghost:hover,.foot .btn.ghost:hover{color:var(--band-bg);border-color:var(--band-ink);}
+.sec.dark .btn.invert{background:var(--band-ink);color:var(--band-bg);border-color:var(--band-ink);}
+.sec.dark .btn.invert::before{background:var(--band-accent);}
+.sec.dark .field label{color:var(--band-ink-mute);}
+.sec.dark .field input,.sec.dark .field select,.sec.dark .field textarea{
+  color:var(--band-ink);border-bottom-color:var(--band-line-strong);}
+.sec.dark .field input:focus,.sec.dark .field select:focus,.sec.dark .field textarea:focus{
+  border-bottom-color:var(--band-accent);}
+.sec.dark .formstate{border-color:var(--band-accent);background:rgba(191,163,107,.12);color:var(--band-ink);}
+.sec.dark :focus-visible,.foot :focus-visible{outline-color:var(--band-accent);}
+.field select option{color:#1B1C19;background:#FCFAF6;}
+:root[data-theme="dark"] .field select option{color:#EDEAE0;background:#1B1E16;}
+.btn.wide{justify-content:space-between;}
+.sec.tint{background:linear-gradient(180deg,var(--pearl),var(--ivory));}
+
+.eyebrow{
+  font-size:.72rem;letter-spacing:.24em;color:var(--botanical);
+  display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;
+}
+html[lang="ar"] .eyebrow{letter-spacing:0;font-size:.85rem;}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line);max-width:90px;}
+.sec.dark .eyebrow{color:var(--band-accent);}
+.sec.dark .eyebrow::after{background:var(--band-line);}
+
+.h2{font-size:var(--step-4);max-width:18ch;}
+.h3{font-size:var(--step-2);}
+.lede{color:var(--ink-soft);}
+.rule{height:1px;background:var(--line);border:0;margin:0;}
+
+/* editorial split */
+.split{display:grid;gap:clamp(2rem,5vw,5rem);align-items:start;}
+@media(min-width:900px){.split{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);}
+  .split.narrow-first{grid-template-columns:minmax(0,.82fr) minmax(0,1fr);}}
+
+/* reveal (one orchestrated motion, respects reduced-motion) */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.rv.in{opacity:1;transform:none;}
+
+/* ============================================================ STORY / FLOWER */
+.story-art{position:relative;aspect-ratio:1/1.08;display:grid;place-items:center;}
+.story-art svg{width:86%;height:auto;overflow:visible;}
+.petal{fill:none;stroke:var(--botanical);stroke-width:.7;opacity:.5;transform-origin:center;}
+.story-art .disc{fill:none;stroke:var(--champagne);stroke-width:.6;opacity:.55;}
+.story-art figcaption{position:absolute;bottom:0;inset-inline-start:0;font-size:.74rem;color:var(--ink-mute);letter-spacing:.1em;}
+html[lang="ar"] .story-art figcaption{letter-spacing:0;}
+.story-copy p + p{margin-top:1.25rem;}
+.story-copy .big{font-family:var(--display);font-size:var(--step-2);line-height:1.34;color:var(--ink);}
+
+/* ============================================================ SERVICES */
+.svc-layout{display:grid;gap:clamp(1.6rem,4vw,3.4rem);}
+@media(min-width:1000px){.svc-layout{grid-template-columns:1fr 1.25fr;align-items:start;}}
+.svc-stage{position:relative;aspect-ratio:1/1;border:1px solid var(--line);background:
+  radial-gradient(70% 60% at 50% 42%,var(--pearl),transparent 72%),
+  linear-gradient(160deg,rgba(125,143,128,.1),rgba(191,163,107,.07));
+  display:grid;place-items:center;overflow:hidden;position:sticky;top:110px;}
+@media(max-width:999px){.svc-stage{position:relative;top:0;aspect-ratio:16/10;}}
+.svc-stage canvas{width:100%;height:100%;}
+.svc-stage .cap{position:absolute;bottom:1.1rem;inset-inline-start:1.2rem;font-size:.74rem;color:var(--ink-mute);letter-spacing:.12em;max-width:70%;}
+html[lang="ar"] .svc-stage .cap{letter-spacing:0;}
+
+.svc-list{display:grid;}
+.svc-row{
+  position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem;align-items:center;
+  padding:1.35rem .25rem;border-top:1px solid var(--line);
+  transition:padding-inline .45s var(--ease),background .45s var(--ease);
+  width:100%;text-align:start;
+}
+.svc-row:last-child{border-bottom:1px solid var(--line);}
+.svc-row .num{font-size:.72rem;color:var(--ink-mute);font-variant-numeric:tabular-nums;width:2ch;}
+.svc-row .t{font-family:var(--display);font-size:var(--step-1);transition:transform .45s var(--ease);}
+html[lang="ar"] .svc-row .t{font-size:1.15rem;}
+.svc-row .d{display:block;font-family:var(--body);font-size:var(--step--1);color:var(--ink-mute);
+  max-height:0;opacity:0;overflow:hidden;transition:max-height .5s var(--ease),opacity .4s var(--ease),margin .5s var(--ease);}
+.svc-row .go{opacity:0;transform:translateX(-6px);transition:opacity .4s,transform .4s var(--ease);color:var(--botanical);font-size:.74rem;letter-spacing:.14em;}
+html[dir="rtl"] .svc-row .go{transform:translateX(6px);}
+.svc-row:hover,.svc-row:focus-visible,.svc-row.active{background:linear-gradient(90deg,rgba(125,143,128,.07),transparent);padding-inline:1rem;}
+.svc-row:hover .d,.svc-row.active .d,.svc-row:focus-visible .d{max-height:5.5rem;opacity:1;margin-top:.45rem;}
+.svc-row:hover .go,.svc-row.active .go,.svc-row:focus-visible .go{opacity:1;transform:none;}
+
+/* ============================================================ STATS */
+.stats{display:grid;gap:1px;background:var(--line);border-block:1px solid var(--line);}
+@media(min-width:640px){.stats{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1000px){.stats{grid-template-columns:repeat(4,1fr);}}
+.stat{background:var(--ivory);padding:clamp(1.8rem,4vw,3rem) clamp(1.1rem,2.4vw,2rem);}
+.sec.dark .stats{background:var(--band-line);border-color:var(--band-line);}
+.sec.dark .stat{background:var(--band-bg);}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:var(--step-4);line-height:1;font-variant-numeric:tabular-nums;}
+.stat span{display:block;margin-top:.7rem;font-size:var(--step--1);color:var(--ink-mute);letter-spacing:.08em;}
+html[lang="ar"] .stat span{letter-spacing:0;}
+.sec.dark .stat span{color:var(--band-ink-soft);}
+
+/* ============================================================ DOCTORS */
+.docs{display:grid;gap:1rem;}
+@media(min-width:600px){.docs{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:960px){.docs{grid-template-columns:repeat(3,1fr);}}
+.doc{
+  background:rgba(255,255,255,.35);padding:clamp(1.2rem,2.2vw,1.8rem);text-align:start;
+  display:grid;gap:1rem;align-content:start;position:relative;border:1px solid rgba(27,28,25,.09);
+  border-radius:22px;box-shadow:0 10px 24px -18px rgba(27,28,25,.28);
+  transition:background .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease);
+}
+.doc:hover,.doc:focus-visible{background:var(--pearl);border-color:rgba(27,28,25,.14);box-shadow:0 18px 35px -22px rgba(27,28,25,.32);transform:translateY(-2px);}
+.doc-portrait{
+  aspect-ratio:4/5;overflow:hidden;position:relative;border-radius:16px;
+  background:linear-gradient(165deg,var(--bone),rgba(125,143,128,.18));
+  border:1px solid rgba(27,28,25,.06);box-shadow:inset 0 1px 0 rgba(255,255,255,.4);
+}
+.doc-portrait svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .9s var(--ease);}
+.doc:hover .doc-portrait svg{transform:scale(1.05);}
+.doc-portrait::after{
+  content:attr(data-init);position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--display);font-size:clamp(2rem,4vw,2.8rem);color:var(--ink-mute);opacity:.45;
+  letter-spacing:.06em;transition:opacity .5s;
+}
+.doc h3{font-size:var(--step-1);}
+html[lang="ar"] .doc h3{font-size:1.14rem;}
+.doc .spec{font-size:var(--step--1);color:var(--ink-mute);line-height:1.5;}
+.doc .more{font-size:.72rem;letter-spacing:.16em;color:var(--botanical);opacity:0;transform:translateY(5px);transition:.4s var(--ease);}
+html[lang="ar"] .doc .more{letter-spacing:0;}
+.doc:hover .more,.doc:focus-visible .more{opacity:1;transform:none;}
+
+/* ============================================================ GALLERY */
+.gal{columns:2;column-gap:clamp(.7rem,1.6vw,1.2rem);}
+@media(min-width:900px){.gal{columns:3;}}
+.gal figure{break-inside:avoid;margin:0 0 clamp(.7rem,1.6vw,1.2rem);position:relative;overflow:hidden;background:var(--bone);}
+.gal button{display:block;width:100%;padding:0;}
+.gal .tile{width:100%;display:block;transition:transform 1s var(--ease);}
+.gal figure:hover .tile{transform:scale(1.04);}
+.gal figcaption{position:absolute;inset-inline:0;bottom:0;padding:.9rem 1rem;font-size:.76rem;
+  color:#F6F3ED;background:linear-gradient(to top,rgba(10,11,7,.8),transparent);
+  opacity:0;transition:opacity .45s;text-align:start;}
+.gal figure:hover figcaption,.gal button:focus-visible figcaption{opacity:1;}
+
+#light{position:fixed;inset:0;z-index:250;background:color-mix(in srgb,var(--band-bg) 96%,transparent);display:none;place-items:center;padding:clamp(1rem,5vw,3rem);}
+#light.on{display:grid;}
+#light .frame{max-width:min(1000px,92vw);width:100%;}
+#light .frame img,#light .frame svg{width:100%;height:auto;border:1px solid var(--band-line);}
+#light .meta{display:flex;justify-content:space-between;gap:1rem;color:var(--band-ink-soft);font-size:.8rem;margin-top:1rem;}
+#light .x,#light .p,#light .n{position:absolute;color:var(--band-ink);padding:1rem;font-size:.86rem;letter-spacing:.1em;}
+#light .x{top:calc(env(safe-area-inset-top,0px) + .6rem);inset-inline-end:.6rem;}
+#light .p{inset-inline-start:.4rem;top:50%;}
+#light .n{inset-inline-end:.4rem;top:50%;}
+
+/* ============================================================ ACCORDION */
+.acc{border-top:1px solid var(--line);}
+.acc-item{border-bottom:1px solid var(--line);}
+.acc-q{width:100%;display:flex;gap:1.2rem;align-items:center;justify-content:space-between;
+  padding:1.35rem .1rem;text-align:start;font-family:var(--display);font-size:var(--step-1);}
+html[lang="ar"] .acc-q{font-size:1.1rem;}
+.acc-q .ic{flex:none;width:18px;height:18px;position:relative;transition:transform .45s var(--ease);}
+.acc-q .ic::before,.acc-q .ic::after{content:"";position:absolute;background:var(--botanical);}
+.acc-q .ic::before{inset-inline:0;top:50%;height:1px;margin-top:-.5px;}
+.acc-q .ic::after{inset-block:0;left:50%;width:1px;margin-left:-.5px;transition:opacity .4s;}
+.acc-item.open .acc-q .ic{transform:rotate(90deg);}
+.acc-item.open .acc-q .ic::after{opacity:0;}
+.acc-a{max-height:0;overflow:hidden;transition:max-height .55s var(--ease);}
+.acc-a > div{padding:0 0 1.5rem;color:var(--ink-soft);max-width:66ch;}
+
+/* ============================================================ FORM */
+.field{display:grid;gap:.5rem;}
+.field label{font-size:.76rem;letter-spacing:.12em;color:var(--ink-mute);}
+html[lang="ar"] .field label{letter-spacing:0;font-size:.85rem;}
+.field input,.field select,.field textarea{
+  font:inherit;font-size:var(--step-0);color:var(--ink);background:transparent;
+  border:0;border-bottom:1px solid var(--line);padding:.7rem 0;border-radius:0;
+  transition:border-color .35s;width:100%;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--botanical);}
+.field textarea{resize:vertical;min-height:100px;}
+.form-grid{display:grid;gap:1.5rem;}
+@media(min-width:640px){.form-grid.two{grid-template-columns:1fr 1fr;}}
+.note{font-size:.8rem;color:var(--ink-mute);line-height:1.6;}
+.formstate{display:none;padding:1.1rem 1.2rem;border:1px solid var(--botanical);background:rgba(125,143,128,.08);font-size:var(--step--1);}
+.formstate.on{display:block;}
+
+/* ============================================================ CONTACT */
+.contact-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);}
+@media(min-width:760px){.contact-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1100px){.contact-grid{grid-template-columns:repeat(4,1fr);}}
+.contact-cell{background:var(--ivory);padding:clamp(1.4rem,3vw,2.2rem);display:grid;gap:.5rem;align-content:start;}
+.contact-cell .k{font-size:.72rem;letter-spacing:.18em;color:var(--ink-mute);}
+html[lang="ar"] .contact-cell .k{letter-spacing:0;font-size:.82rem;}
+.contact-cell .v{font-family:var(--display);font-size:var(--step-1);line-height:1.4;}
+html[lang="ar"] .contact-cell .v{font-size:1.1rem;}
+.contact-cell a.v:hover{color:var(--botanical);}
+.map{
+  position:relative;aspect-ratio:16/9;border:1px solid var(--line);overflow:hidden;
+  background:linear-gradient(150deg,var(--pearl),var(--bone));
+}
+.map svg{position:absolute;inset:0;width:100%;height:100%;}
+.map .pin{position:absolute;top:47%;left:54%;width:14px;height:14px;margin:-7px 0 0 -7px;}
+.map .pin::before,.map .pin::after{content:"";position:absolute;inset:0;border-radius:50%;}
+.map .pin::before{background:var(--botanical);}
+.map .pin::after{border:1px solid var(--botanical);animation:ping 2.8s var(--ease-io) infinite;}
+@keyframes ping{0%{transform:scale(1);opacity:.8}70%,100%{transform:scale(3.4);opacity:0}}
+.map .lbl{position:absolute;bottom:1rem;inset-inline-start:1rem;background:var(--glass);backdrop-filter:blur(10px);
+  padding:.7rem 1rem;font-size:.8rem;border:1px solid var(--line);}
+
+/* ============================================================ FOOTER */
+.foot{background:var(--band-bg);color:var(--band-ink);padding-block:clamp(3.4rem,8vh,6rem) 2rem;}
+.foot a{color:var(--band-ink-soft);transition:color .3s;}
+.foot a:hover{color:var(--band-ink);}
+.foot-grid{display:grid;gap:clamp(2rem,4vw,3rem);}
+@media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1.2fr;}}
+.foot h4{font-size:.74rem;letter-spacing:.2em;font-family:var(--body);color:var(--band-ink-mute);margin-bottom:1.1rem;}
+html[lang="ar"] .foot h4{letter-spacing:0;font-size:.85rem;}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;font-size:var(--step--1);}
+.foot .brand b{color:var(--band-ink);}
+.foot .about{color:var(--band-ink-soft);font-size:var(--step--1);max-width:34ch;margin-top:1.1rem;line-height:1.75;}
+.foot-base{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;
+  margin-top:clamp(2.4rem,6vh,4rem);padding-top:1.6rem;border-top:1px solid var(--band-line);
+  font-size:.76rem;color:var(--band-ink-mute);}
+.foot .lang{border-color:var(--band-line-strong);}
+.foot .lang button{color:var(--band-ink-soft);}
+.foot .lang button[aria-pressed="true"]{background:var(--band-ink);color:var(--band-bg);}
+
+/* ============================================================ SUBPAGE */
+.page-head{padding-top:calc(78px + clamp(3rem,9vh,6rem));padding-bottom:clamp(2rem,5vh,3.5rem);}
+.crumbs{font-size:.74rem;letter-spacing:.1em;color:var(--ink-mute);margin-bottom:1.5rem;}
+html[lang="ar"] .crumbs{letter-spacing:0;}
+.crumbs a:hover{color:var(--ink);}
+.detail-body h3{margin-top:2.4rem;margin-bottom:.9rem;font-size:var(--step-2);}
+.detail-body p + p{margin-top:1.1rem;}
+.detail-body ul{margin:1.1rem 0 0;padding-inline-start:1.1rem;display:grid;gap:.55rem;color:var(--ink-soft);}
+.detail-body li::marker{color:var(--champagne);}
+.aside-card{border:1px solid var(--line);padding:clamp(1.3rem,2.6vw,2rem);display:grid;gap:1rem;align-content:start;background:var(--pearl);position:sticky;top:110px;}
+@media(max-width:899px){.aside-card{position:relative;top:0;}}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;}
+.chip{border:1px solid var(--line);padding:.45rem .85rem;font-size:.78rem;color:var(--ink-soft);transition:.3s;}
+.chip:hover{border-color:var(--botanical);color:var(--botanical);}
+
+.empty{border:1px dashed var(--line);padding:clamp(1.6rem,4vw,2.6rem);display:grid;gap:.9rem;max-width:68ch;}
+.empty .h{font-family:var(--display);font-size:var(--step-2);}
+
+/* page transition veil */
+#veil{position:fixed;inset:0;z-index:260;background:var(--ivory);pointer-events:none;
+  clip-path:inset(0 0 100% 0);}
+#veil.in{clip-path:inset(0 0 0 0);transition:clip-path .42s var(--ease-io);}
+#veil.out{clip-path:inset(100% 0 0 0);transition:clip-path .42s var(--ease-io);}
+
+/* ============================================================ MOTION SAFETY */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
+  .rv{opacity:1;transform:none;}
+  #cursor,#cursor-ring{display:none;}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div id="loader" role="status" aria-live="polite">
+  <div class="loader-in">
+    <svg class="loader-mark" viewBox="0 0 100 100" aria-hidden="true">
+      <g id="lm"></g>
+      <circle cx="50" cy="50" r="7" style="--len:45"/>
+    </svg>
+    <div class="loader-word">KADINA</div>
+    <div class="loader-bar"><i id="lbar"></i></div>
+  </div>
+</div>
+
+<div id="veil" aria-hidden="true"></div>
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#/en/" data-route aria-label="Kadina Medical Center — home">
+      <img class="brand-logo" src="kadina-logo-cropped.png" alt="Kadina">
+      <b id="brandword" class="sr">KADINA</b>
+    </a>
+    <nav class="nav-links" id="navlinks" aria-label="Primary"></nav>
+    <div class="nav-act">
+      <button class="tgl" id="themetop" aria-label="Switch theme"></button>
+      <div class="lang" id="langtop" role="group" aria-label="Language"></div>
+      <a class="btn sm btn-nav" id="navcta" href="#/en/appointment" data-route></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="menu" aria-hidden="true">
+  <div class="m-top">
+    <span class="brand"><img class="brand-logo" src="kadina-logo-cropped.png" alt="Kadina"><b class="sr">KADINA</b></span>
+    <button class="burger m-close" id="mclose" aria-label="Close menu"><i></i><i></i><i></i></button>
+  </div>
+  <nav class="m-nav" id="mnav" aria-label="Mobile"></nav>
+  <div class="m-foot">
+    <a href="tel:+966114555444" dir="ltr">+966 11 455 5444</a>
+    <span style="display:flex;gap:.7rem;align-items:center">
+      <button class="tgl" id="thememenu" aria-label="Switch theme"></button>
+      <span class="lang" id="langmenu" role="group" aria-label="Language"></span>
+    </span>
+  </div>
+</div>
+
+<main id="main"></main>
+<footer class="foot" id="foot"></footer>
+
+<div id="light" role="dialog" aria-modal="true" aria-label="Gallery viewer">
+  <button class="x" id="lx" aria-label="Close">CLOSE</button>
+  <button class="p" id="lp" aria-label="Previous">‹</button>
+  <button class="n" id="ln" aria-label="Next">›</button>
+  <div class="frame"><div id="lframe"></div><div class="meta"><span id="lcap"></span><span id="lidx"></span></div></div>
+</div>
+
+<noscript>
+  <div style="padding:6rem 1.5rem 3rem;max-width:70ch;margin:auto">
+    <h1>Kadina Medical Center</h1>
+    <p>Established in Riyadh, Saudi Arabia in 2013, Kadina Medical Center offers a full range of surgical
+    and non-surgical cosmetic procedures under the supervision of consultant medical staff.</p>
+    <p>Services include dermatology, hair loss treatment, laser therapy, ingrown nail care, cosmetic surgery,
+    laser hair removal, hair problems, Vivas technology, cosmetic injections, Botox and plasma.</p>
+    <p>Phone: <a href="tel:+966114555444">+966 11 455 5444</a> —
+    Email: <a href="mailto:info@kadina.com.sa">info@kadina.com.sa</a> —
+    Riyadh, North Ring Road. Monday to Friday, 9:00 am – 10:00 pm.</p>
+  </div>
+</noscript>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ==========================================================================
+   KADINA — CONTENT LAYER
+   Every string below is either verbatim from kadina.com.sa or an editorial
+   re-organisation of it. No medical claim, credential, statistic, price,
+   testimonial or patient result has been invented.
+   Sources: kadina.com.sa/ , /about-us/ , /our-services/ , /our-team/ , /kadina-contact/
+   ========================================================================== */
+
+var SITE = {
+  phone:"+966 11 455 5444",
+  phoneHref:"tel:+966114555444",
+  phoneAlt:"+966 53 001 7422",
+  phoneAltHref:"tel:+966530017422",
+  email:"info@kadina.com.sa",
+  email2:"info@kadina.com",
+  founded:"2013"
+};
+
+/* ---- Services: descriptions verbatim from kadina.com.sa/our-services/ ---- */
+var SERVICES_EN = [
+  { slug:"dermatology", cat:"Skin", title:"Dermatology",
+    short:"Treatment of skin disease with current medical methods and modern technology.",
+    body:["The skin is the largest organ of the human body by area, and it is exposed to several external and intrinsic factors that make it a prey to a number of diseases.",
+          "The centre treats all skin diseases with the latest medical means and modern technologies."],
+    listTitle:"Conditions named by Kadina",
+    list:["Melasma","Skin allergies (atopic eczema)","Treatment of dark circles around the eyes","Removal of the sebaceous cyst","The effects of dark circles"] },
+
+  { slug:"hair-loss", cat:"Hair", title:"Hair Loss",
+    short:"PRP, Regenera and FUE transplantation for the causes of hair loss.",
+    body:["There are multiple causes of hair loss, from changes in diet to chronic diseases.",
+          "We at Kadina offer all solutions starting from PRP injections, Regenera (microscopic cells), or hair transplantation (FUE technique)."],
+    listTitle:"Approaches offered", list:["PRP injections","Regenera (microscopic cells)","Hair transplantation — FUE technique"] },
+
+  { slug:"laser-therapy", cat:"Laser", title:"Laser Therapy",
+    short:"Focused laser treatment, an alternative to surgery in some cases.",
+    body:["Laser beams focus on the affected area and reduce damage to it, and are an alternative to surgeries in some cases.",
+          "The laser helps regenerate nerve cells and improves communication with the brain. It softens scar tissue so that the fibers can be stretched to allow for more movement."],
+    listTitle:"", list:[] },
+
+  { slug:"ingrown-nail", cat:"Skin", title:"Ingrown Nail",
+    short:"Care for corns, calluses and the hardened skin that forms under pressure.",
+    body:["Corns and calluses are thick, hardened layers of skin that appear when the skin is trying to protect itself from friction or pressure. They usually form on the feet or hands and fingers of each.",
+          "If you're healthy, you won't need treatment for corns and calluses unless they're causing you pain or you're not happy with the way they look. For most people, corns or bumps will disappear."],
+    listTitle:"", list:[] },
+
+  { slug:"cosmetic-surgery", cat:"Surgery", title:"Cosmetic Surgery",
+    short:"Surgical procedures performed by the centre's plastic surgery consultants.",
+    body:["Our expert medical staff is professional in performing appropriate plastic surgeries with results that exceed the expectations of the auditors."],
+    listTitle:"Procedures named by Kadina",
+    list:["Face and nose beautification","Face and eyelid lift","Breast surgeries: lift, augmentation, reduction","Liposuction and body sculpting","Tummy tuck, thighs and arms","Repairing deformities in various areas of the body"] },
+
+  { slug:"laser-hair-removal", cat:"Laser", title:"Laser Hair Removal",
+    short:"A medical procedure to remove unwanted excess hair.",
+    body:["Laser hair removal is a medical procedure to remove unwanted excess hair. During laser hair removal, the laser emits light that is absorbed by the pigment (melanin) in the hair.",
+          "The light energy is converted into heat, which damages the tubular sacs inside the skin (hair follicles) that are responsible for hair production. This damage prevents or delays hair growth.",
+          "Laser hair removal is most effective on people with fair skin and dark hair, but it can produce successful results on all skin types."],
+    listTitle:"", list:[] },
+
+  { slug:"hair-problems", cat:"Hair", title:"Hair Problems",
+    short:"Examination, diagnosis and treatment of hair loss problems.",
+    body:["At Kadina, we are keen to keep abreast of the latest technologies to examine and treat hair loss problems and to find appropriate treatments, whether they are topical or hair transplantation using the extraction technique (FUE).",
+          "The diagnosis also relies on the experience of the attending physician, which extends for 25 years, and this enables us to give an accurate diagnosis and appropriate treatments for each case."],
+    listTitle:"", list:[] },
+
+  { slug:"vivas", cat:"Technology", title:"Vivas Technology",
+    short:"Skin tightening and rejuvenation without surgery, using fractional frequency waves.",
+    body:["A qualitative leap in skin tightening and rejuvenation without surgery, it works by means of fractional frequency waves, and its micro-needles enter the inner layer of the skin."],
+    listTitle:"It has proven effective in",
+    list:["Skin tightening, especially the face, neck, hands, arms and abdomen","Reducing silent (non-expressive) wrinkles","Minimizing wide pores in the face","Reducing stretch marks"] },
+
+  { slug:"cosmetic-injections", cat:"Injectables", title:"Cosmetic Injections",
+    short:"Dermal fillers to restore volume and fullness to the face and lips.",
+    body:["With age and exposure to various factors, such as sun, smoking, poor diet, loss of collagen and natural moisturizers, and neglect, some areas of the face sag, and lines and skin folds appear.",
+          "We use dermal filler injections, with their safe, synthetic, and natural composition, to restore volume and fullness to the face and lips, thanks to this immediate, non-surgical cosmetic technique."],
+    listTitle:"", list:[] },
+
+  { slug:"botox", cat:"Injectables", title:"Botox",
+    short:"Relaxing the muscles of the expressive areas of the face to reduce wrinkles.",
+    body:["Botox injections aim to relax the muscles of the expressive areas of the face, which leads to the reduction of wrinkles."],
+    listTitle:"Areas Kadina lists as treated",
+    list:["Frown area wrinkles: they appear between the eyebrows when frowning or angry","Wrinkles around the eyes: appear when smiling broadly or partially closing the eyes","Forehead wrinkles: appear when surprised","Descent of the eyebrow: it can be raised slightly in some cases"] },
+
+  { slug:"plasma", cat:"Injectables", title:"Plasma",
+    short:"Cell regeneration by injecting platelet-rich plasma.",
+    body:["One of the latest methods used to regenerate cells by injecting plasma rich in platelets and vital elements necessary to restore freshness and vitality."],
+    listTitle:"", list:[] }
+];
+
+var SERVICES_AR = [
+  { slug:"dermatology", cat:"البشرة", title:"الأمراض الجلدية",
+    short:"علاج أمراض الجلد بأحدث الوسائل الطبية والتقنيات الحديثة.",
+    body:["الجلد هو أكبر أعضاء جسم الإنسان من حيث المساحة، وهو معرّض لعدة عوامل خارجية وداخلية تجعله عرضة لعدد من الأمراض.",
+          "يعالج المركز جميع الأمراض الجلدية بأحدث الوسائل الطبية والتقنيات الحديثة."],
+    listTitle:"حالات يذكرها مركز كادينا",
+    list:["الكلف","الحساسية الجلدية (الإكزيما التأتبية)","علاج الهالات السوداء حول العينين","إزالة الكيس الدهني","آثار الهالات السوداء"] },
+
+  { slug:"hair-loss", cat:"الشعر", title:"تساقط الشعر",
+    short:"حقن البلازما وتقنية Regenera وزراعة الشعر بتقنية الاقتطاف.",
+    body:["لتساقط الشعر أسباب متعددة، من تغيّر النظام الغذائي إلى الأمراض المزمنة.",
+          "نقدّم في كادينا الحلول كافة بدءاً من حقن البلازما PRP، أو Regenera (الخلايا المجهرية)، أو زراعة الشعر بتقنية الاقتطاف FUE."],
+    listTitle:"الحلول المتاحة", list:["حقن البلازما PRP","Regenera — الخلايا المجهرية","زراعة الشعر بتقنية الاقتطاف FUE"] },
+
+  { slug:"laser-therapy", cat:"الليزر", title:"العلاج بالليزر",
+    short:"أشعة مركّزة تُعد بديلاً عن الجراحة في بعض الحالات.",
+    body:["تركّز أشعة الليزر على المنطقة المصابة وتقلّل الضرر الواقع عليها، وهي بديل عن الجراحة في بعض الحالات.",
+          "يساعد الليزر على تجديد الخلايا العصبية ويحسّن تواصلها مع الدماغ، كما يليّن النسيج الندبي بحيث يمكن تمديد أليافه لإتاحة حركة أوسع."],
+    listTitle:"", list:[] },
+
+  { slug:"ingrown-nail", cat:"البشرة", title:"الظفر الغائر",
+    short:"العناية بمسامير اللحم والجلد المتصلّب الناتج عن الاحتكاك أو الضغط.",
+    body:["مسامير اللحم والكاليس طبقات جلدية سميكة ومتصلّبة تظهر حين يحاول الجلد حماية نفسه من الاحتكاك أو الضغط، وتتكوّن عادة في القدمين أو اليدين والأصابع.",
+          "إذا كنت بصحة جيدة فلن تحتاج إلى علاجها إلا إذا كانت تسبّب ألماً أو لم تكن راضياً عن شكلها، وعند معظم الناس تزول من تلقاء نفسها."],
+    listTitle:"", list:[] },
+
+  { slug:"cosmetic-surgery", cat:"الجراحة", title:"الجراحة التجميلية",
+    short:"عمليات يجريها استشاريو جراحة التجميل في المركز.",
+    body:["يتميّز طاقمنا الطبي بالاحترافية في إجراء الجراحات التجميلية المناسبة بنتائج تفوق توقعات المراجعين."],
+    listTitle:"إجراءات يذكرها مركز كادينا",
+    list:["تجميل الوجه والأنف","شد الوجه والجفون","جراحات الثدي: الشد والتكبير والتصغير","شفط الدهون ونحت الجسم","شد البطن والفخذين والذراعين","إصلاح التشوّهات في مناطق الجسم المختلفة"] },
+
+  { slug:"laser-hair-removal", cat:"الليزر", title:"إزالة الشعر بالليزر",
+    short:"إجراء طبي لإزالة الشعر الزائد غير المرغوب فيه.",
+    body:["إزالة الشعر بالليزر إجراء طبي لإزالة الشعر الزائد غير المرغوب فيه. خلال الجلسة يصدر الليزر ضوءاً تمتصّه الصبغة (الميلانين) في الشعرة.",
+          "تتحوّل طاقة الضوء إلى حرارة تُلحق الضرر بالأكياس الأنبوبية داخل الجلد (بصيلات الشعر) المسؤولة عن إنتاج الشعر، وهذا الضرر يمنع نمو الشعر أو يؤخّره.",
+          "إزالة الشعر بالليزر أكثر فاعلية لدى أصحاب البشرة الفاتحة والشعر الداكن، لكنها قد تعطي نتائج ناجحة مع جميع أنواع البشرة."],
+    listTitle:"", list:[] },
+
+  { slug:"hair-problems", cat:"الشعر", title:"مشاكل الشعر",
+    short:"فحص مشكلات تساقط الشعر وتشخيصها وعلاجها.",
+    body:["نحرص في كادينا على مواكبة أحدث التقنيات لفحص مشكلات تساقط الشعر وعلاجها وإيجاد العلاجات المناسبة، سواء كانت موضعية أو زراعة شعر بتقنية الاقتطاف FUE.",
+          "ويعتمد التشخيص كذلك على خبرة الطبيب المعالج الممتدة لخمسة وعشرين عاماً، وهو ما يمكّننا من تشخيص دقيق وعلاجات مناسبة لكل حالة."],
+    listTitle:"", list:[] },
+
+  { slug:"vivas", cat:"التقنيات", title:"تقنية Vivas",
+    short:"شد البشرة وتجديدها دون جراحة عبر موجات التردد الجزئي.",
+    body:["نقلة نوعية في شد البشرة وتجديدها دون جراحة، تعمل بواسطة موجات التردد الجزئي، وتدخل إبرها الدقيقة إلى الطبقة الداخلية من الجلد."],
+    listTitle:"أثبتت فاعليتها في",
+    list:["شد البشرة، خاصة الوجه والرقبة واليدين والذراعين والبطن","تقليل التجاعيد الساكنة (غير التعبيرية)","تصغير المسام الواسعة في الوجه","تقليل علامات التمدد"] },
+
+  { slug:"cosmetic-injections", cat:"الحقن", title:"الحقن التجميلي",
+    short:"الفيلر لاستعادة الحجم والامتلاء في الوجه والشفاه.",
+    body:["مع التقدّم في العمر والتعرّض لعوامل مختلفة كالشمس والتدخين وسوء التغذية وفقدان الكولاجين والمرطّبات الطبيعية والإهمال، ترتخي بعض مناطق الوجه وتظهر الخطوط وثنيات الجلد.",
+          "نستخدم حقن الفيلر الجلدي، بتركيبته الآمنة والصناعية والطبيعية، لاستعادة الحجم والامتلاء في الوجه والشفاه، بفضل هذه التقنية التجميلية الفورية غير الجراحية."],
+    listTitle:"", list:[] },
+
+  { slug:"botox", cat:"الحقن", title:"البوتوكس",
+    short:"إرخاء عضلات مناطق التعبير في الوجه لتقليل التجاعيد.",
+    body:["يهدف حقن البوتوكس إلى إرخاء عضلات مناطق التعبير في الوجه، ما يؤدي إلى تقليل التجاعيد."],
+    listTitle:"مناطق يذكر كادينا علاجها",
+    list:["تجاعيد منطقة العبوس: تظهر بين الحاجبين عند العبوس أو الغضب","التجاعيد حول العينين: تظهر عند الابتسام الواسع أو إغلاق العينين جزئياً","تجاعيد الجبهة: تظهر عند الاندهاش","نزول الحاجب: يمكن رفعه قليلاً في بعض الحالات"] },
+
+  { slug:"plasma", cat:"الحقن", title:"البلازما",
+    short:"تجديد الخلايا عبر حقن البلازما الغنية بالصفائح.",
+    body:["من أحدث الطرق المستخدمة لتجديد الخلايا عن طريق حقن البلازما الغنية بالصفائح الدموية والعناصر الحيوية اللازمة لاستعادة النضارة والحيوية."],
+    listTitle:"", list:[] }
+];
+
+/* ---- Doctors: names and specialties as published by Kadina.
+   The specialty order follows kadina.com.sa/our-team/. One listed physician's
+   name was not recoverable from the source, and is flagged rather than invented. ---- */
+var DOCTORS_EN = [
+  { id:"muhammad-al-haddab", name:"Dr. Muhammad Al-Haddab", spec:"Consultant in cosmetic dermatology and laser", tags:["dermatology","laser-hair-removal"] },
+  { id:"nayef-al-shahrani", name:"Dr. Nayef Al-Shahrani", spec:"Dermatology, laser and cosmetic injections consultant", tags:["cosmetic-injections","botox","laser-therapy"] },
+  { id:"abdul-mohsen-al-lazzam", name:"Dr. Abdul Mohsen Al-Lazzam", spec:"Plastic surgery consultant", tags:["cosmetic-surgery"] },
+  { id:"hossam-al-ghamdi", name:"Dr. Hossam Al-Ghamdi", spec:"Dermatology and beauty consultant", tags:["dermatology","cosmetic-injections"] },
+  { id:"iman-al-makhdhab", name:"Dr. Iman Al-Makhdhab", spec:"Dermatology consultant", tags:["dermatology"] },
+  { id:"abdul-majeed-al-hadlaq", name:"Dr. Abdul Majeed Al-Hadlaq", spec:"Plastic surgery consultant", tags:["cosmetic-surgery"] },
+  { id:"nouf-al-zahrani", name:"Dr. Nouf Al-Zahrani", spec:"Dermatology and beauty consultant", tags:["dermatology","plasma"] },
+  { id:"walaa-al-dhabban", name:"Dr. Walaa Al-Dhabban", spec:"Plastic, burns and reconstructive surgery consultant", tags:["cosmetic-surgery"] },
+  { id:"abdulaziz-al-mudaimigh", name:"Dr. Abdulaziz Al-Mudaimigh", spec:"Plastic surgery consultant", tags:["cosmetic-surgery"] }
+];
+var DOCTORS_AR = [
+  { id:"muhammad-al-haddab", name:"د. محمد الحداب", spec:"استشاري الأمراض الجلدية التجميلية والليزر", tags:["dermatology","laser-hair-removal"] },
+  { id:"nayef-al-shahrani", name:"د. نايف الشهراني", spec:"استشاري الجلدية والليزر والحقن التجميلي", tags:["cosmetic-injections","botox","laser-therapy"] },
+  { id:"abdul-mohsen-al-lazzam", name:"د. عبدالمحسن اللزام", spec:"استشاري جراحة التجميل", tags:["cosmetic-surgery"] },
+  { id:"hossam-al-ghamdi", name:"د. حسام الغامدي", spec:"استشاري الجلدية والتجميل", tags:["dermatology","cosmetic-injections"] },
+  { id:"iman-al-makhdhab", name:"د. إيمان المخضب", spec:"استشارية الأمراض الجلدية", tags:["dermatology"] },
+  { id:"abdul-majeed-al-hadlaq", name:"د. عبدالمجيد الحدلق", spec:"استشاري جراحة التجميل", tags:["cosmetic-surgery"] },
+  { id:"nouf-al-zahrani", name:"د. نوف الزهراني", spec:"استشارية الجلدية والتجميل", tags:["dermatology","plasma"] },
+  { id:"walaa-al-dhabban", name:"د. ولاء الذبان", spec:"استشارية جراحة التجميل والحروق والترميم", tags:["cosmetic-surgery"] },
+  { id:"abdulaziz-al-mudaimigh", name:"د. عبدالعزيز المديميغ", spec:"استشاري جراحة التجميل", tags:["cosmetic-surgery"] }
+];
+
+/* ---- Interface copy ---- */
+var T = {
+  en:{
+    dir:"ltr", label:"EN", other:"ar", otherLabel:"AR",
+    nav:[["","Home"],["about","About"],["services","Services"],["doctors","Doctors"],["gallery","Gallery"],["blog","Journal"],["contact","Contact"]],
+    book:"Book an appointment", explore:"Explore our services", callUs:"Call the centre",
+    heroKicker:"Riyadh · since "+SITE.founded,
+    heroTitle:"A full range of surgical and non-surgical cosmetic procedures",
+    heroLede:"Kadina Medical Center brings dermatology, laser, hair restoration and plastic surgery together under one roof, led by consultant physicians.",
+    scroll:"SCROLL",
+    introEye:"The name",
+    introTitle:"Named after a flower that keeps its leaves",
+    story:["“Kadina” is derived from a species of flowers named “Cady” that is known for its flawless leaves and eternal beauty.",
+           "The flower Cady is in essence part of the perfume and cosmetics industry for its unique fragrance and wonderful look.",
+           "That inheritance sets the standard the centre works to: care that is precise, considered, and quiet about itself."],
+    storyCap:"Cady — the flower the centre is named for",
+    svcEye:"Services", svcTitle:"Eleven areas of care",
+    svcLede:"Select an area to read what Kadina publishes about it. Every description on these pages is the centre's own.",
+    svcStageCap:"Hover a service to shift the sculpture",
+    readMore:"Read",
+    aboutEye:"About", aboutTitle:"Who we are",
+    aboutBody:["Kadina Medical Center was established in Riyadh, Saudi Arabia in "+SITE.founded+" as a safe destination for everyone seeking better health condition and high beauty standards.",
+               "We count ourselves experts in the cosmetics industry with more than 8 years of experience in surgical and non-surgical operations that yielded best possible outcomes.",
+               "Kadina offers to its clients a variety of all-inclusive packages through our experienced medical practitioners and surgeons, with the use of technologically advanced equipment."],
+    packagesTitle:"Most of our packages navigate through",
+    packages:["Plastic surgery","Hair transplant","Laser therapy and treatment","Extensive skin and hair care","Cosmetic injectable treatments"],
+    missionT:"Our mission", missionB:"We are committed to making every cosmetic service available at Kadina, free from danger along the process. We guarantee an end-to-end safe and sound process, to begin with storing our client's data in secure databases, talking them through the essential procedures, and making sure final premium outcome is in place.",
+    visionT:"Our vision", visionB:"We aspire to cater all surgical and non-surgical cosmetic procedures to our client's needs under one roof at Kadina; in adherence to international medical standards set by global cosmetics industry.",
+    statsEye:"By the numbers", statsTitle:"What the centre reports",
+    stats:[[22,"Health sections"],[60,"Different services"],[388,"Surgeries"],[1280,"Satisfied patients"]],
+    statsNote:"Figures as published by Kadina Medical Center.",
+    docEye:"Medical team", docTitle:"Our doctors",
+    docLede:"The centre treats all skin diseases with the latest medical methods and modern technologies.",
+    docProfile:"View profile", docAll:"All doctors", docRelated:"Related services",
+    unnamedDoc:"Consultant name pending",
+    unnamedNote:"This physician is listed on the current Kadina website by specialty only. The name will be filled in from the centre's records rather than assumed.",
+    docBioNote:"Kadina publishes this physician's specialty. Any further biography, qualifications or certifications should be supplied by the centre before this profile is published.",
+    galEye:"Gallery", galTitle:"The centre",
+    galLede:"These frames are the layout and lightbox behaviour for Kadina's own photography. They carry no stock imagery and no patient results.",
+    galNote:"These photographs show Kadina Medical Center. Patient results require written consent and are not included here.",
+    blogEye:"Journal", blogTitle:"Writing from the centre",
+    blogEmptyH:"No articles have been published yet",
+    blogEmptyB:"The current Kadina site does not expose article content that could be carried over. This section is built and waiting: add entries to the journal data file and cards, article pages and metadata appear automatically.",
+    faqEye:"Questions", faqTitle:"Before you visit",
+    faqNote:"The current Kadina website does not publish an FAQ. These answers restate only information the centre already states elsewhere on its site — hours, contact, scope of care — and should be reviewed by the clinic before launch.",
+    faq:[["Where is the centre?","Kadina Medical Center is in Riyadh, on the North Ring Road."],
+         ["When are you open?","Monday to Friday, 9:00 am to 10:00 pm."],
+         ["How do I reach the centre?","By phone on "+SITE.phone+", or by email at "+SITE.email+"."],
+         ["What does Kadina treat?","A full range of surgical and non-surgical cosmetic procedures, across dermatology, laser, hair and plastic surgery. The services section lists all eleven areas."]],
+    apptEye:"Appointments", apptTitle:"Request an appointment",
+    apptLede:"Send your details and the centre will call you back to confirm a time. Booking is confirmed by Kadina's staff, not by this form.",
+    fName:"Full name", fPhone:"Phone", fEmail:"Email", fService:"Service of interest", fNote:"Anything we should know", fPick:"Select a service",
+    send:"Send request", sending:"Sending…",
+    formNote:"This form is not connected to a booking system. Until the centre's scheduling backend is connected, the fastest way to book is to call "+SITE.phone+".",
+    formOk:"Your details are ready to send. Connect the centre's booking endpoint to complete this step — or call "+SITE.phone+" now.",
+    contactEye:"Contact", contactTitle:"Find the centre",
+    cPhone:"Phone", cEmail:"Email", cAddr:"Location", cHours:"Hours",
+    addr:"Riyadh — North Ring Road", hours:"Monday – Friday, 9:00 am – 10:00 pm",
+    mapNote:"Riyadh — North Ring Road. A precise pin will be set from the centre's own listing.",
+    footAbout:"A cosmetic medical center in Riyadh offering a full range of surgical and non-surgical cosmetic procedures.",
+    fServices:"Services", fCentre:"Centre", fReach:"Get in touch",
+    rights:"Kadina Medical Center. All rights reserved.",
+    backTo:"Back to", home:"Home", notFoundT:"This page has moved or never existed",
+    notFoundB:"Use the navigation above, or head back to the homepage.",
+    relatedSvc:"Related services", careTeam:"Consultants in this area",
+    bookThis:"Book this service", overview:"Overview"
+  },
+  ar:{
+    dir:"rtl", label:"AR", other:"en", otherLabel:"EN",
+    nav:[["","الرئيسية"],["about","عن كادينا"],["services","الخدمات"],["doctors","الأطباء"],["gallery","المعرض"],["blog","المدونة"],["contact","تواصل معنا"]],
+    book:"احجز موعدك", explore:"تصفّح خدماتنا", callUs:"اتصل بالمركز",
+    heroKicker:"الرياض · منذ "+SITE.founded,
+    heroTitle:"مجموعة متكاملة من الإجراءات التجميلية الجراحية وغير الجراحية",
+    heroLede:"يجمع مركز كادينا الطبي الجلدية والليزر وزراعة الشعر وجراحة التجميل تحت سقف واحد، بإشراف نخبة من الاستشاريين.",
+    scroll:"انزل",
+    introEye:"الاسم",
+    introTitle:"اسمٌ مأخوذ من زهرة لا تذبل أوراقها",
+    story:["«كادينا» مشتقّ من نوع من الزهور يُدعى «كادي»، يُعرف بأوراقه الخالية من العيوب وجماله الذي لا يزول.",
+           "وزهرة كادي جزء أصيل من صناعة العطور ومستحضرات التجميل لعبيرها الفريد ومظهرها البديع.",
+           "هذا الإرث هو المعيار الذي يعمل به المركز: عناية دقيقة، مدروسة، لا تتحدث عن نفسها كثيراً."],
+    storyCap:"كادي — الزهرة التي حمل المركز اسمها",
+    svcEye:"الخدمات", svcTitle:"إحدى عشرة مجالاً للرعاية",
+    svcLede:"اختر مجالاً لتقرأ ما ينشره كادينا عنه. كل وصف في هذه الصفحات هو نصّ المركز نفسه.",
+    svcStageCap:"مرّر فوق الخدمة لتتبدّل المنحوتة",
+    readMore:"اقرأ",
+    aboutEye:"عن المركز", aboutTitle:"من نحن",
+    aboutBody:["تأسّس مركز كادينا الطبي في الرياض، المملكة العربية السعودية، عام "+SITE.founded+" ليكون وجهة آمنة لكل باحث عن حالة صحية أفضل ومعايير جمال عالية.",
+               "نعدّ أنفسنا خبراء في صناعة التجميل بخبرة تتجاوز ثماني سنوات في العمليات الجراحية وغير الجراحية التي حقّقت أفضل النتائج الممكنة.",
+               "يقدّم كادينا لعملائه باقات متنوعة وشاملة عبر ممارسين وجرّاحين ذوي خبرة، وباستخدام أجهزة متقدّمة تقنياً."],
+    packagesTitle:"تشمل باقاتنا غالباً",
+    packages:["جراحة التجميل","زراعة الشعر","العلاج بالليزر","العناية الشاملة بالبشرة والشعر","الحقن التجميلي"],
+    missionT:"رسالتنا", missionB:"نلتزم بأن تكون كل خدمة تجميلية في كادينا خالية من الخطر في كل مراحلها. نضمن عملية آمنة وسليمة من طرف إلى طرف، بدءاً من حفظ بيانات عملائنا في قواعد بيانات آمنة، ومروراً بشرح الإجراءات الأساسية لهم، ووصولاً إلى التأكّد من تحقّق النتيجة النهائية المتميّزة.",
+    visionT:"رؤيتنا", visionB:"نطمح إلى تلبية جميع الإجراءات التجميلية الجراحية وغير الجراحية وفق احتياجات عملائنا تحت سقف واحد في كادينا، التزاماً بالمعايير الطبية العالمية التي تضعها صناعة التجميل.",
+    statsEye:"بالأرقام", statsTitle:"ما يعلنه المركز",
+    stats:[[22,"قسماً صحياً"],[60,"خدمة مختلفة"],[388,"عملية جراحية"],[1280,"مراجعاً راضياً"]],
+    statsNote:"أرقام كما ينشرها مركز كادينا الطبي.",
+    docEye:"الفريق الطبي", docTitle:"أطباؤنا",
+    docLede:"يعالج المركز جميع الأمراض الجلدية بأحدث الوسائل الطبية والتقنيات الحديثة.",
+    docProfile:"الملف التعريفي", docAll:"كل الأطباء", docRelated:"خدمات ذات صلة",
+    unnamedDoc:"اسم الاستشاري قيد الاستكمال",
+    unnamedNote:"هذا الطبيب مُدرج في موقع كادينا الحالي بتخصّصه فقط. سيُستكمل الاسم من سجلات المركز لا بالافتراض.",
+    docBioNote:"ينشر كادينا تخصّص هذا الطبيب. أي سيرة أو مؤهلات أو شهادات إضافية ينبغي أن يوفّرها المركز قبل نشر هذا الملف.",
+    galEye:"المعرض", galTitle:"المركز",
+    galLede:"هذه الإطارات هي تخطيط المعرض وسلوك العارض لصور كادينا الرسمية. لا تحتوي صوراً جاهزة ولا نتائج مراجعين.",
+    galNote:"تُظهر هذه الصور مركز كادينا الطبي. نتائج المراجعين تتطلّب موافقة خطية وغير مدرجة هنا.",
+    blogEye:"المدونة", blogTitle:"كتابات من المركز",
+    blogEmptyH:"لم تُنشر مقالات بعد",
+    blogEmptyB:"لا يتيح موقع كادينا الحالي محتوى مقالات يمكن نقله. هذا القسم مبنيّ وجاهز: أضف المقالات إلى ملف بيانات المدونة لتظهر البطاقات وصفحات المقالات والبيانات الوصفية تلقائياً.",
+    faqEye:"أسئلة", faqTitle:"قبل زيارتك",
+    faqNote:"لا ينشر موقع كادينا الحالي قسم أسئلة شائعة. هذه الإجابات تعيد صياغة معلومات يذكرها المركز أصلاً في موقعه — الأوقات والتواصل ونطاق الرعاية — ويُنصح بمراجعتها من المركز قبل الإطلاق.",
+    faq:[["أين يقع المركز؟","يقع مركز كادينا الطبي في الرياض، على الطريق الدائري الشمالي."],
+         ["ما أوقات العمل؟","من الإثنين إلى الجمعة، من 9:00 صباحاً حتى 10:00 مساءً."],
+         ["كيف أتواصل مع المركز؟","هاتفياً على "+SITE.phone+"، أو عبر البريد "+SITE.email+"."],
+         ["ما الذي يعالجه كادينا؟","مجموعة متكاملة من الإجراءات التجميلية الجراحية وغير الجراحية في الجلدية والليزر والشعر وجراحة التجميل. ويعرض قسم الخدمات المجالات الأحد عشر كاملة."]],
+    apptEye:"المواعيد", apptTitle:"اطلب موعداً",
+    apptLede:"أرسل بياناتك وسيعاود المركز الاتصال بك لتأكيد الموعد. التأكيد يتم من موظفي كادينا لا عبر هذا النموذج.",
+    fName:"الاسم الكامل", fPhone:"رقم الجوال", fEmail:"البريد الإلكتروني", fService:"الخدمة المطلوبة", fNote:"ما الذي ينبغي أن نعرفه", fPick:"اختر خدمة",
+    send:"أرسل الطلب", sending:"جارٍ الإرسال…",
+    formNote:"هذا النموذج غير موصول بنظام حجز. وإلى أن يُوصل نظام المواعيد لدى المركز، فإن أسرع طريقة للحجز هي الاتصال على "+SITE.phone+".",
+    formOk:"بياناتك جاهزة للإرسال. اربط نقطة الحجز لدى المركز لإتمام هذه الخطوة — أو اتصل الآن على "+SITE.phone+".",
+    contactEye:"تواصل", contactTitle:"كيف تصل إلينا",
+    cPhone:"الهاتف", cEmail:"البريد", cAddr:"الموقع", cHours:"أوقات العمل",
+    addr:"الرياض — الطريق الدائري الشمالي", hours:"الإثنين – الجمعة، 9:00 صباحاً – 10:00 مساءً",
+    mapNote:"الرياض — الطريق الدائري الشمالي. سيُضبط الموقع الدقيق من بيانات المركز.",
+    footAbout:"مركز طبي تجميلي في الرياض يقدّم مجموعة متكاملة من الإجراءات التجميلية الجراحية وغير الجراحية.",
+    fServices:"الخدمات", fCentre:"المركز", fReach:"للتواصل",
+    rights:"مركز كادينا الطبي. جميع الحقوق محفوظة.",
+    backTo:"العودة إلى", home:"الرئيسية", notFoundT:"هذه الصفحة انتقلت أو لم توجد",
+    notFoundB:"استخدم القائمة أعلاه، أو عد إلى الصفحة الرئيسية.",
+    relatedSvc:"خدمات ذات صلة", careTeam:"استشاريو هذا المجال",
+    bookThis:"احجز هذه الخدمة", overview:"نظرة عامة"
+  }
+};
+/* ---- MEDIA ----------------------------------------------------------------
+   The one place images are configured. Paste Kadina's own image URLs (or
+   local /images/... paths) here and they appear everywhere that subject is
+   shown — team grid, doctor profile, gallery, lightbox.
+
+   Leave a value empty and that frame falls back to the generated tile, so a
+   missing or broken photograph never leaves a hole in the layout.
+
+   NOTE: the current kadina.com.sa markup does not expose its image URLs to
+   automated extraction, so these are left blank rather than guessed. No stock
+   photography and no fabricated portraits have been substituted.
+--------------------------------------------------------------------------- */
+var MEDIA = {
+  doctors:{
+    "muhammad-al-haddab":"https://kadina.com.sa/wp-content/uploads/2022/10/%D8%A7%D9%84%D9%87%D8%AF%D8%A7%D8%A8-1.jpg",
+    "nayef-al-shahrani":"https://kadina.com.sa/wp-content/uploads/2023/09/%D9%86%D8%A7%D9%8A%D9%81-%D8%A7%D9%84%D8%B4%D9%87%D8%B1%D8%A7%D9%86%D9%8A-.jpg",
+    "abdul-mohsen-al-lazzam":"https://kadina.com.sa/wp-content/uploads/2022/10/%D8%A7%D9%84%D9%84%D8%B2%D8%A7%D9%85.png",
+    "hossam-al-ghamdi":"https://kadina.com.sa/wp-content/uploads/2022/10/%D8%AD%D8%B3%D8%A7%D9%85-%D8%A7%D9%84%D8%BA%D8%A7%D9%85%D8%AF%D9%8A.jpg",
+    "iman-al-makhdhab":"https://img.magnific.com/free-vector/hand-drawn-iranian-women-illustration_23-2149825684.jpg?semt=ais_hybrid&w=740&q=80",
+    "abdul-majeed-al-hadlaq":"https://kadina.com.sa/wp-content/uploads/2023/09/maha300-200.jpg",
+    "nouf-al-zahrani":"https://kadina.com.sa/wp-content/uploads/2022/10/%D9%86%D9%88%D9%81-.jpg",
+    "walaa-al-dhabban":"https://kadina.com.sa/wp-content/uploads/2023/09/%D9%88%D9%84%D8%A7%D8%A1-1-2.jpg",
+    "abdulaziz-al-mudaimigh":"https://kadina.com.sa/wp-content/uploads/2023/09/%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2-%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%85%D9%8A%D8%BA.jpg"
+  },
+  /* ratio is the frame shape, used before the image loads so nothing shifts */
+  gallery:[
+    { src:"https://kadina.com.sa/wp-content/uploads/2022/06/DPP07DE041E031E55-scaled.jpg", ratio:[4,5],  alt:{en:"Kadina Medical Center",            ar:"مركز كادينا الطبي"} },
+    { src:"https://kadina.com.sa/wp-content/uploads/2022/06/DPP07DE041E032B12-scaled.jpg", ratio:[4,3],  alt:{en:"Kadina Medical Center",            ar:"مركز كادينا الطبي"} },
+    { src:"https://kadina.com.sa/wp-content/uploads/2022/06/DPP07DE041E032D29-1024x683.jpg", ratio:[1,1],  alt:{en:"Kadina Medical Center",            ar:"مركز كادينا الطبي"} },
+    { src:"https://kadina.com.sa/wp-content/uploads/2022/06/DPP07DE041E032F44-1024x683.jpg", ratio:[3,4],  alt:{en:"Kadina Medical Center",            ar:"مركز كادينا الطبي"} },
+    { src:"https://kadina.com.sa/wp-content/uploads/2022/06/DPP07DE041E053B33-1024x683.jpg", ratio:[4,5],  alt:{en:"Kadina Medical Center",            ar:"مركز كادينا الطبي"} },
+    { src:"https://kadina.com.sa/wp-content/uploads/2022/06/DPP07DE041E060B35-1024x683.jpg", ratio:[16,10],alt:{en:"Kadina Medical Center",            ar:"مركز كادينا الطبي"} },
+    { src:"https://kadina.com.sa/wp-content/uploads/2022/06/IMG_3420-scaled.jpg", ratio:[1,1],  alt:{en:"Kadina Medical Center",            ar:"مركز كادينا الطبي"} },
+    { src:"https://kadina.com.sa/wp-content/uploads/2022/04/melasma.jpg", ratio:[4,3],  alt:{en:"Kadina Medical Center",            ar:"مركز كادينا الطبي"} }
+  ]
+};
+
+function SVC(l){ return l==="ar"?SERVICES_AR:SERVICES_EN; }
+function DOC(l){ return l==="ar"?DOCTORS_AR:DOCTORS_EN; }
+</script>
+
+<script>
+/* ==========================================================================
+   KADINA — APPLICATION
+   ========================================================================== */
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s);},
+    $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));},
+    esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});};
+var RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var COARSE = window.matchMedia("(pointer: coarse)").matches;
+var MOBILE = window.matchMedia("(max-width: 860px)").matches;
+
+var state = { lang:"en", view:"home", param:null };
+function t(){ return T[state.lang]; }
+
+/* ---------------------------------------------------------------- BRAND MARK
+   Eight petals on a circle — the Cady flower, reduced to line. */
+function petalPath(i,n,r1,r2,cx,cy){
+  var a = (i/n)*Math.PI*2 - Math.PI/2, w = Math.PI/n*0.82;
+  var p=function(ang,r){return [(cx+Math.cos(ang)*r).toFixed(2),(cy+Math.sin(ang)*r).toFixed(2)];};
+  var tip=p(a,r2), l=p(a-w,r1), rr=p(a+w,r1), b=p(a,r1*0.34);
+  return "M"+b[0]+" "+b[1]+"C"+l[0]+" "+l[1]+" "+tip[0]+" "+tip[1]+" "+tip[0]+" "+tip[1]+
+         "C"+tip[0]+" "+tip[1]+" "+rr[0]+" "+rr[1]+" "+b[0]+" "+b[1]+"Z";
+}
+function mark(size,stroke){
+  var n=8,s="",c=size/2;
+  for(var i=0;i<n;i++) s+='<path d="'+petalPath(i,n,size*0.16,size*0.46,c,c)+'" fill="none" stroke="'+stroke+'" stroke-width="'+(size/40)+'" stroke-linejoin="round"/>';
+  s+='<circle cx="'+c+'" cy="'+c+'" r="'+(size*0.075)+'" fill="none" stroke="'+stroke+'" stroke-width="'+(size/40)+'"/>';
+  return s;
+}
+var brandmark=$("#brandmark");
+if(brandmark) brandmark.innerHTML = mark(40,"currentColor");
+(function(){
+  var g=$("#lm"),n=8,s="";
+  for(var i=0;i<n;i++) s+='<path style="--len:150;animation-delay:'+(i*0.075)+'s" d="'+petalPath(i,n,16,46,50,50)+'"/>';
+  g.innerHTML=s;
+})();
+
+/* ---------------------------------------------------------------- THEME
+   Explicit choice wins and is remembered for this viewer; with no choice on
+   record the page follows the operating system. */
+var THEME_ICON =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">'+
+    '<g class="moon"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4 8.4 8.4 0 1 0 20 14.2Z"/></g>'+
+    '<g class="sun"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2M12 19.4v2M2.6 12h2M19.4 12h2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"/></g>'+
+  '</svg>';
+function storedTheme(){ try{ return localStorage.getItem("kadina-theme"); }catch(e){ return null; } }
+function systemDark(){ return window.matchMedia("(prefers-color-scheme: dark)").matches; }
+function currentTheme(){ return storedTheme() || (systemDark()?"dark":"light"); }
+function applyTheme(mode,persist){
+  document.documentElement.setAttribute("data-theme",mode);
+  var m=document.querySelector('meta[name="theme-color"]');
+  if(m) m.setAttribute("content", mode==="dark" ? "#141610" : "#F6F3ED");
+  if(persist){ try{ localStorage.setItem("kadina-theme",mode); }catch(e){} }
+  $$(".tgl").forEach(function(b){
+    b.innerHTML=THEME_ICON;
+    b.setAttribute("aria-pressed", String(mode==="dark"));
+    b.setAttribute("title", mode==="dark"
+      ? (state.lang==="ar"?"الوضع الفاتح":"Switch to light")
+      : (state.lang==="ar"?"الوضع الداكن":"Switch to dark"));
+    b.setAttribute("aria-label", b.getAttribute("title"));
+  });
+}
+function toggleTheme(){
+  var next = document.documentElement.getAttribute("data-theme")==="dark" ? "light" : "dark";
+  applyTheme(next,true);
+  /* the 3D materials and environment are lit for one ground or the other */
+  disposeScenes(); initScenes();
+}
+applyTheme(currentTheme(),false);
+try{
+  var mq=window.matchMedia("(prefers-color-scheme: dark)");
+  var follow=function(){ if(!storedTheme()){ applyTheme(systemDark()?"dark":"light",false); disposeScenes(); initScenes(); } };
+  if(mq.addEventListener) mq.addEventListener("change",follow); else if(mq.addListener) mq.addListener(follow);
+}catch(e){}
+function isDark(){ return document.documentElement.getAttribute("data-theme")==="dark"; }
+
+/* ---------------------------------------------------------------- ROUTING */
+var VIEWS=["","about","services","doctors","gallery","blog","contact","appointment"];
+function parseHash(){
+  var h=(location.hash||"").replace(/^#\/?/,"").replace(/\/$/,"");
+  var seg=h.split("/").filter(Boolean);
+  var lang = (seg[0]==="ar"||seg[0]==="en")?seg.shift():"en";
+  var view = seg.shift()||"";
+  var param = seg.shift()||null;
+  return {lang:lang, view:view, param:param};
+}
+function href(view,param,lang){
+  lang=lang||state.lang;
+  return "#/"+lang+"/"+(view||"")+(param?"/"+param:"");
+}
+function go(view,param){ location.hash = href(view,param); }
+
+/* ---------------------------------------------------------------- CHROME */
+function renderChrome(){
+  var L=t(), lang=state.lang;
+  document.documentElement.lang=lang;
+  document.documentElement.dir=L.dir;
+  $("#brandword").textContent = lang==="ar" ? "كادينا" : "KADINA";
+  $("#navcta").textContent = L.book;
+  $("#navcta").setAttribute("href", href("appointment"));
+
+  $("#navlinks").innerHTML = L.nav.map(function(n){
+    return '<a href="'+href(n[0])+'" data-v="'+n[0]+'">'+esc(n[1])+'</a>';
+  }).join("");
+
+  $("#mnav").innerHTML = L.nav.concat([["appointment",L.book]]).map(function(n,i){
+    return '<a href="'+href(n[0])+'" style="transition-delay:'+(0.07+i*0.045)+'s">'+
+      esc(n[1])+'<span>'+String(i+1).padStart(2,"0")+'</span></a>';
+  }).join("");
+
+  var lsw = '<button data-lang="en" aria-pressed="'+(lang==="en")+'">EN</button>'+
+            '<button data-lang="ar" aria-pressed="'+(lang==="ar")+'">ع</button>';
+  $("#langtop").innerHTML=lsw; $("#langmenu").innerHTML=lsw;
+
+  var svc=SVC(lang);
+  $("#foot").innerHTML =
+  '<div class="wrap"><div class="foot-grid">'+
+    '<div><span class="brand"><img class="brand-logo" src="kadina-logo-cropped.png" alt="Kadina"><b class="sr">'+
+      (lang==="ar"?"كادينا":"KADINA")+'</b></span><p class="about">'+esc(L.footAbout)+'</p></div>'+
+    '<div><h4>'+esc(L.fServices)+'</h4><ul>'+svc.slice(0,6).map(function(s){
+      return '<li><a href="'+href("services",s.slug)+'">'+esc(s.title)+'</a></li>';}).join("")+
+      '<li><a href="'+href("services")+'">'+esc(L.nav[2][1])+' →</a></li></ul></div>'+
+    '<div><h4>'+esc(L.fCentre)+'</h4><ul>'+L.nav.slice(1).map(function(n){
+      return '<li><a href="'+href(n[0])+'">'+esc(n[1])+'</a></li>';}).join("")+'</ul></div>'+
+    '<div><h4>'+esc(L.fReach)+'</h4><ul>'+
+      '<li><a href="'+SITE.phoneHref+'" dir="ltr">'+SITE.phone+'</a></li>'+
+      '<li><a href="mailto:'+SITE.email+'">'+SITE.email+'</a></li>'+
+      '<li>'+esc(L.addr)+'</li><li>'+esc(L.hours)+'</li></ul>'+
+      '<p style="margin-top:1.2rem"><a class="btn sm ghost" href="'+href("appointment")+'">'+esc(L.book)+'</a></p>'+
+    '</div>'+
+  '</div><div class="foot-base"><span>© '+(new Date().getFullYear())+' '+esc(L.rights)+'</span>'+
+    '<span style="display:flex;gap:.7rem;align-items:center">'+
+      '<button class="tgl" aria-label="Switch theme"></button>'+
+      '<span class="lang" role="group">'+lsw+'</span></span></div></div>';
+
+  applyTheme(document.documentElement.getAttribute("data-theme")||"light",false);
+  $$(".tgl").forEach(function(b){ b.addEventListener("click",toggleTheme); });
+  $$("[data-lang]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var nl=b.getAttribute("data-lang");
+      if(nl===state.lang) return;
+      location.hash = href(state.view, state.param, nl);   /* language switch keeps the page */
+    });
+  });
+  markCurrent();
+}
+function markCurrent(){
+  $$("#navlinks a").forEach(function(a){
+    if(a.getAttribute("data-v")===state.view) a.setAttribute("aria-current","page");
+    else a.removeAttribute("aria-current");
+  });
+}
+
+/* ---------------------------------------------------------------- PIECES */
+function sectionHead(eye,title,lede,cls){
+  return '<div class="'+(cls||"")+'"><p class="eyebrow">'+esc(eye)+'</p>'+
+    '<h2 class="h2">'+esc(title)+'</h2>'+
+    (lede?'<p class="lede prose" style="margin-top:1.4rem;font-size:var(--step-1)">'+esc(lede)+'</p>':'')+'</div>';
+}
+function ctaPair(){
+  var L=t();
+  return '<div class="hero-cta"><a class="btn" href="'+href("appointment")+'">'+esc(L.book)+'</a>'+
+    '<a class="btn ghost" href="'+href("services")+'">'+esc(L.explore)+'</a></div>';
+}
+function initials(name){
+  if(!name) return "—";
+  var p=name.replace(/^(Dr\.|Professor|د\.|الأستاذ الدكتور)\s*/,"").trim().split(/\s+/);
+  return (p[0]||"").charAt(0)+(p[1]?p[1].charAt(0):"");
+}
+/* deterministic abstract tile — organic field, no photography, no stock */
+function tile(seed,w,h){
+  var r=function(n){var x=Math.sin(seed*99.13+n*37.7)*10000;return x-Math.floor(x);};
+  var hues=[[70,88,75],[191,163,107],[237,232,222],[27,28,25]];
+  var a=hues[Math.floor(r(1)*3)], b=hues[Math.floor(r(2)*3)];
+  var g="g"+seed;
+  var blobs="";
+  for(var i=0;i<4;i++){
+    blobs+='<ellipse cx="'+(15+r(i+3)*70)+'%" cy="'+(15+r(i+9)*70)+'%" rx="'+(16+r(i+5)*26)+'%" ry="'+(14+r(i+7)*24)+'%" fill="url(#'+g+')" opacity="'+(0.2+r(i+11)*0.32).toFixed(2)+'"/>';
+  }
+  var lines="";
+  for(var j=0;j<7;j++){
+    var y=(j+1)*(100/8);
+    lines+='<path d="M0 '+y+' Q 25 '+(y-4-r(j)*7)+' 50 '+y+' T 100 '+y+'" fill="none" stroke="var(--line)" stroke-width="0.22" vector-effect="non-scaling-stroke"/>';
+  }
+  return '<svg class="tile" viewBox="0 0 100 '+Math.round(100*h/w)+'" preserveAspectRatio="none" aria-hidden="true" focusable="false">'+
+    '<defs><radialGradient id="'+g+'"><stop offset="0%" stop-color="rgb('+a.join(",")+')" stop-opacity=".55"/>'+
+    '<stop offset="100%" stop-color="rgb('+b.join(",")+')" stop-opacity="0"/></radialGradient></defs>'+
+    '<rect width="100" height="'+Math.round(100*h/w)+'" fill="var(--bone)"/>'+
+    '<g class="tblobs">'+blobs+'</g>'+
+    '<g transform="scale(1,'+(h/w)+')">'+lines+'</g></svg>';
+}
+
+/* A frame that prefers the real photograph and degrades to the tile.
+   The <img> is attached in wire() rather than via inline handlers. */
+function pic(src,alt,seed,w,h){
+  if(src) return '<img data-src="'+esc(src)+'" alt="'+esc(alt)+'" width="'+w+'" height="'+h+'">';
+  return tile(seed,w,h);
+}
+function attachImages(root){
+  $$("img[data-src]",root||document).forEach(function(im){
+    var frame = im.parentNode;
+    im.loading="lazy"; im.decoding="async";
+    im.addEventListener("load",function(){
+      im.classList.add("loaded");
+      if(frame && frame.classList) frame.classList.add("has-img");
+    });
+    im.addEventListener("error",function(){ if(im.parentNode) im.parentNode.removeChild(im); });
+    im.src = im.getAttribute("data-src");
+    im.removeAttribute("data-src");
+  });
+}
+
+/* ---------------------------------------------------------------- VIEWS */
+function vHome(){
+  var L=t(), svc=SVC(state.lang), docs=DOC(state.lang);
+  return (
+  /* 02 — hero */
+  '<section class="hero" aria-labelledby="h1">'+
+    '<div class="hero-fallback" aria-hidden="true"></div>'+
+    '<div id="scene" aria-hidden="true"></div>'+
+    '<div class="hero-grad" aria-hidden="true"></div>'+
+    '<div class="hero-in wrap">'+
+      '<h1 id="h1"><span class="kicker">'+esc(L.heroKicker)+'</span>'+esc(L.heroTitle)+'</h1>'+
+      '<p class="lede">'+esc(L.heroLede)+'</p>'+ctaPair()+
+    '</div>'+
+    '<div class="scroll-cue" aria-hidden="true"><span>'+esc(L.scroll)+'</span><i></i></div>'+
+  '</section>'+
+
+  /* 03/04 — the name, Cady flower */
+  '<section class="sec" aria-labelledby="s-story"><div class="wrap split narrow-first">'+
+    '<figure class="story-art rv" id="flowerart">'+
+      '<svg viewBox="0 0 200 200" aria-hidden="true">'+
+        (function(){var s="";for(var i=0;i<12;i++)s+='<path class="petal" style="animation-delay:'+(i*.08)+'s" d="'+petalPath(i,12,26,88,100,100)+'"/>';
+         return s+'<circle class="disc" cx="100" cy="100" r="18"/><circle class="disc" cx="100" cy="100" r="30" opacity=".3"/>';})()+
+      '</svg><figcaption>'+esc(L.storyCap)+'</figcaption></figure>'+
+    '<div class="story-copy rv"><p class="eyebrow">'+esc(L.introEye)+'</p>'+
+      '<h2 id="s-story" class="h2" style="max-width:14ch">'+esc(L.introTitle)+'</h2>'+
+      '<div style="margin-top:2rem" class="prose">'+
+      '<p class="big">'+esc(L.story[0])+'</p>'+
+      '<p class="lede">'+esc(L.story[1])+'</p>'+
+      '<p class="lede">'+esc(L.story[2])+'</p></div></div>'+
+  '</div></section>'+
+
+  /* 05/06 — services explorer */
+  '<section class="sec tint" aria-labelledby="s-svc"><div class="wrap">'+
+    sectionHead(L.svcEye,L.svcTitle,L.svcLede,"rv")+
+    '<div class="svc-layout" style="margin-top:clamp(2.4rem,6vh,4rem)">'+
+      '<div class="svc-stage" id="svcstage"><span class="cap">'+esc(L.svcStageCap)+'</span></div>'+
+      '<div class="svc-list" id="svclist">'+svc.map(function(s,i){
+        return '<a class="svc-row" href="'+href("services",s.slug)+'" data-i="'+i+'" data-cat="'+esc(s.cat)+'">'+
+          '<span class="num">'+String(i+1).padStart(2,"0")+'</span>'+
+          '<span><span class="t">'+esc(s.title)+'</span><span class="d">'+esc(s.short)+'</span></span>'+
+          '<span class="go">'+esc(L.readMore)+'</span></a>';
+      }).join("")+'</div>'+
+    '</div></div></section>'+
+
+  /* 07 — about */
+  '<section class="sec" aria-labelledby="s-about"><div class="wrap split">'+
+    '<div class="rv">'+sectionHead(L.aboutEye,L.aboutTitle,null,"")+
+      '<div class="chips" style="margin-top:2rem">'+L.packages.map(function(p){
+        return '<span class="chip">'+esc(p)+'</span>';}).join("")+'</div>'+
+      '<p style="margin-top:2rem"><a class="btn ghost" href="'+href("about")+'">'+esc(L.nav[1][1])+'</a></p></div>'+
+    '<div class="rv prose">'+L.aboutBody.map(function(p,i){
+      return '<p class="'+(i===0?"story-copy":"")+'" style="'+(i===0?"font-family:var(--display);font-size:var(--step-2);line-height:1.35":"margin-top:1.3rem;color:var(--ink-soft)")+'">'+esc(p)+'</p>';
+    }).join("")+'</div>'+
+  '</div></section>'+
+
+  /* 08 — statistics */
+  '<section class="sec dark" aria-labelledby="s-stats"><div class="wrap">'+
+    sectionHead(L.statsEye,L.statsTitle,null,"rv")+
+    '<div class="stats rv" id="stats" style="margin-top:clamp(2rem,5vh,3.4rem)">'+
+      L.stats.map(function(s){
+        return '<div class="stat"><b data-to="'+s[0]+'">0</b><span>'+esc(s[1])+'</span></div>';}).join("")+
+    '</div><p class="note rv" style="margin-top:1.2rem">'+esc(L.statsNote)+'</p>'+
+  '</div></section>'+
+
+  /* 09 — doctors */
+  '<section class="sec" aria-labelledby="s-doc"><div class="wrap">'+
+    sectionHead(L.docEye,L.docTitle,L.docLede,"rv")+
+    '<div class="docs rv" style="margin-top:clamp(2rem,5vh,3.4rem)">'+
+      docs.slice(0,6).map(docCard).join("")+'</div>'+
+    '<p style="margin-top:2rem"><a class="btn ghost" href="'+href("doctors")+'">'+esc(L.docAll)+'</a></p>'+
+  '</div></section>'+
+
+  /* 11 — gallery */
+  '<section class="sec tint" aria-labelledby="s-gal"><div class="wrap">'+
+    sectionHead(L.galEye,L.galTitle,L.galLede,"rv")+
+    '<div class="gal rv" id="gal" style="margin-top:clamp(2rem,5vh,3rem)">'+galTiles(MEDIA.gallery.length)+'</div>'+
+    '<p class="note rv" style="margin-top:1.4rem;max-width:64ch">'+esc(L.galNote)+'</p>'+
+  '</div></section>'+
+
+  /* 13/14 — appointment + contact */
+  apptBlock()+contactBlock()
+  );
+}
+
+function docCard(d){
+  var L=t();
+  var nm = d.unnamed ? L.unnamedDoc : d.name;
+  return '<a class="doc" href="'+href("doctors",d.id)+'">'+
+    '<span class="doc-portrait media" data-init="'+esc(initials(d.name))+'">'+
+      pic(MEDIA.doctors[d.id]||"", nm+" — "+d.spec, d.id.length*7+d.spec.length, 4,5)+'</span>'+
+    '<h3>'+esc(nm)+'</h3><span class="spec">'+esc(d.spec)+'</span>'+
+    '<span class="more">'+esc(L.docProfile)+'</span></a>';
+}
+function galTiles(n){
+  var out="";
+  for(var i=0;i<n;i++){
+    var g=MEDIA.gallery[i%MEDIA.gallery.length], d=g.ratio;
+    var alt=(g.alt&&g.alt[state.lang])||(g.alt&&g.alt.en)||"Kadina Medical Center";
+    var cap=g.src?alt:((state.lang==="ar"?"صورة كادينا — ":"Kadina photography — ")+String(i+1).padStart(2,"0"));
+    out+='<figure><button data-g="'+i+'" aria-label="'+esc(cap)+'">'+
+      '<span class="media" style="display:block;aspect-ratio:'+d[0]+'/'+d[1]+'">'+pic(g.src,alt,i*13+5,d[0],d[1])+'</span>'+
+      '<figcaption>'+esc(cap)+'</figcaption></button></figure>';
+  }
+  return out;
+}
+function apptBlock(){
+  var L=t(), svc=SVC(state.lang);
+  return '<section class="sec dark" id="appt" aria-labelledby="s-appt"><div class="wrap split">'+
+    '<div class="rv">'+sectionHead(L.apptEye,L.apptTitle,L.apptLede,"")+
+      '<div style="margin-top:2.2rem;display:grid;gap:.9rem">'+
+      '<a class="btn ghost wide" href="'+SITE.phoneHref+'"><span>'+esc(L.callUs)+'</span><span dir="ltr">'+SITE.phone+'</span></a>'+
+      '<a class="btn ghost wide" href="mailto:'+SITE.email+'"><span>'+esc(L.cEmail)+'</span><span dir="ltr">'+SITE.email+'</span></a>'+
+      '</div></div>'+
+    '<form class="rv" id="apptform" novalidate style="display:grid;gap:1.6rem">'+
+      '<div class="form-grid two">'+
+        '<div class="field"><label for="f1">'+esc(L.fName)+'</label><input id="f1" name="name" required autocomplete="name"></div>'+
+        '<div class="field"><label for="f2">'+esc(L.fPhone)+'</label><input id="f2" name="phone" type="tel" dir="ltr" required autocomplete="tel"></div>'+
+      '</div>'+
+      '<div class="form-grid two">'+
+        '<div class="field"><label for="f3">'+esc(L.fEmail)+'</label><input id="f3" name="email" type="email" dir="ltr" autocomplete="email"></div>'+
+        '<div class="field"><label for="f4">'+esc(L.fService)+'</label><select id="f4" name="service">'+
+          '<option value="">'+esc(L.fPick)+'</option>'+svc.map(function(s){
+            return '<option value="'+s.slug+'">'+esc(s.title)+'</option>';}).join("")+'</select></div>'+
+      '</div>'+
+      '<div class="field"><label for="f5">'+esc(L.fNote)+'</label><textarea id="f5" name="note" rows="3"></textarea></div>'+
+      '<div class="formstate" id="apptstate" role="status"></div>'+
+      '<div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center">'+
+        '<button class="btn invert" type="submit">'+esc(L.send)+'</button></div>'+
+      '<p class="note">'+esc(L.formNote)+'</p>'+
+    '</form></div></section>';
+}
+function contactBlock(){
+  var L=t();
+  return '<section class="sec" id="contactblock" aria-labelledby="s-contact"><div class="wrap">'+
+    sectionHead(L.contactEye,L.contactTitle,null,"rv")+
+    '<div class="contact-grid rv" style="margin-top:clamp(2rem,5vh,3rem)">'+
+      '<div class="contact-cell"><span class="k">'+esc(L.cPhone)+'</span><a class="v" dir="ltr" href="'+SITE.phoneHref+'">'+SITE.phone+'</a><a class="v" dir="ltr" style="font-size:var(--step-0)" href="'+SITE.phoneAltHref+'">'+SITE.phoneAlt+'</a></div>'+
+      '<div class="contact-cell"><span class="k">'+esc(L.cEmail)+'</span><a class="v" dir="ltr" href="mailto:'+SITE.email+'">'+SITE.email+'</a><a class="v" dir="ltr" style="font-size:var(--step-0)" href="mailto:'+SITE.email2+'">'+SITE.email2+'</a></div>'+
+      '<div class="contact-cell"><span class="k">'+esc(L.cAddr)+'</span><span class="v">'+esc(L.addr)+'</span></div>'+
+      '<div class="contact-cell"><span class="k">'+esc(L.cHours)+'</span><span class="v">'+esc(L.hours)+'</span></div>'+
+    '</div>'+
+    '<div class="map rv" style="margin-top:clamp(1.4rem,3vw,2rem)">'+
+      '<svg viewBox="0 0 160 90" aria-hidden="true">'+
+        '<rect width="160" height="90" fill="var(--pearl)"/>'+
+        '<path d="M-10 62 Q 40 44 86 50 T 172 40" fill="none" stroke="var(--botanical)" stroke-opacity=".45" stroke-width="1.6"/>'+
+        '<path d="M-10 70 Q 40 52 86 58 T 172 48" fill="none" stroke="var(--botanical)" stroke-opacity=".2" stroke-width="3"/>'+
+        (function(){var s="";for(var i=0;i<26;i++){var x=(i*37)%160,y=(i*53)%90;
+          s+='<rect x="'+x+'" y="'+y+'" width="'+(4+(i%5)*2.4)+'" height="'+(3+(i%4)*2)+'" fill="var(--line-soft)"/>';}return s;})()+
+        '<path d="M96 0 L 96 90" stroke="var(--line)" stroke-width="1"/>'+
+        '<path d="M0 26 L 160 26" stroke="var(--line-soft)" stroke-width="1"/>'+
+      '</svg><span class="pin" aria-hidden="true"></span>'+
+      '<span class="lbl">'+esc(L.mapNote)+'</span></div>'+
+  '</div></section>';
+}
+
+function vAbout(){
+  var L=t();
+  return '<div class="page-head wrap"><nav class="crumbs"><a href="'+href("")+'">'+esc(L.home)+'</a> / '+esc(L.nav[1][1])+'</nav>'+
+    '<h1 class="h2" style="font-size:var(--step-5);max-width:13ch">'+esc(L.aboutTitle)+'</h1></div>'+
+  '<section class="sec" style="padding-top:0"><div class="wrap split">'+
+    '<div class="rv prose detail-body">'+L.aboutBody.map(function(p,i){
+      return '<p style="'+(i===0?"font-family:var(--display);font-size:var(--step-2);line-height:1.35":"margin-top:1.3rem;color:var(--ink-soft)")+'">'+esc(p)+'</p>';}).join("")+
+      '<h3>'+esc(L.packagesTitle)+'</h3><ul>'+L.packages.map(function(p){return '<li>'+esc(p)+'</li>';}).join("")+'</ul>'+
+      '<h3>'+esc(L.missionT)+'</h3><p class="lede">'+esc(L.missionB)+'</p>'+
+      '<h3>'+esc(L.visionT)+'</h3><p class="lede">'+esc(L.visionB)+'</p>'+
+    '</div>'+
+    '<div class="rv"><figure class="story-art" style="aspect-ratio:1/1"><svg viewBox="0 0 200 200" aria-hidden="true">'+
+      (function(){var s="";for(var i=0;i<12;i++)s+='<path class="petal" d="'+petalPath(i,12,26,88,100,100)+'"/>';
+       return s+'<circle class="disc" cx="100" cy="100" r="18"/>';})()+'</svg>'+
+      '<figcaption>'+esc(L.storyCap)+'</figcaption></figure>'+
+      '<div class="prose" style="margin-top:2rem">'+L.story.map(function(p){
+        return '<p class="lede" style="margin-top:1rem">'+esc(p)+'</p>';}).join("")+'</div></div>'+
+  '</div></section>'+
+  '<section class="sec dark"><div class="wrap">'+sectionHead(L.statsEye,L.statsTitle,null,"rv")+
+    '<div class="stats rv" id="stats" style="margin-top:2.6rem">'+L.stats.map(function(s){
+      return '<div class="stat"><b data-to="'+s[0]+'">0</b><span>'+esc(s[1])+'</span></div>';}).join("")+
+    '</div><p class="note rv" style="margin-top:1.2rem">'+esc(L.statsNote)+'</p></div></section>'+
+  faqBlock()+apptBlock();
+}
+
+function faqBlock(){
+  var L=t();
+  return '<section class="sec tint"><div class="wrap split narrow-first">'+
+    '<div class="rv">'+sectionHead(L.faqEye,L.faqTitle,null,"")+
+      '<p class="note" style="margin-top:1.6rem;max-width:44ch">'+esc(L.faqNote)+'</p></div>'+
+    '<div class="acc rv" id="acc">'+L.faq.map(function(f,i){
+      return '<div class="acc-item"><button class="acc-q" aria-expanded="false" aria-controls="a'+i+'">'+
+        '<span>'+esc(f[0])+'</span><span class="ic" aria-hidden="true"></span></button>'+
+        '<div class="acc-a" id="a'+i+'" role="region"><div>'+esc(f[1])+'</div></div></div>';}).join("")+
+    '</div></div></section>';
+}
+
+function vServices(){
+  var L=t(), svc=SVC(state.lang);
+  return '<div class="page-head wrap"><nav class="crumbs"><a href="'+href("")+'">'+esc(L.home)+'</a> / '+esc(L.nav[2][1])+'</nav>'+
+    '<h1 class="h2" style="font-size:var(--step-5);max-width:13ch">'+esc(L.svcTitle)+'</h1>'+
+    '<p class="lede prose" style="margin-top:1.4rem;font-size:var(--step-1)">'+esc(L.svcLede)+'</p></div>'+
+  '<section class="sec" style="padding-top:0"><div class="wrap"><div class="svc-layout">'+
+    '<div class="svc-stage" id="svcstage"><span class="cap">'+esc(L.svcStageCap)+'</span></div>'+
+    '<div class="svc-list" id="svclist">'+svc.map(function(s,i){
+      return '<a class="svc-row" href="'+href("services",s.slug)+'" data-i="'+i+'" data-cat="'+esc(s.cat)+'">'+
+        '<span class="num">'+String(i+1).padStart(2,"0")+'</span>'+
+        '<span><span class="t">'+esc(s.title)+'</span><span class="d">'+esc(s.short)+'</span></span>'+
+        '<span class="go">'+esc(L.readMore)+'</span></a>';}).join("")+
+    '</div></div></div></section>'+apptBlock();
+}
+
+function vService(slug){
+  var L=t(), svc=SVC(state.lang);
+  var s=null,i; for(i=0;i<svc.length;i++) if(svc[i].slug===slug) s=svc[i];
+  if(!s) return v404();
+  var related = svc.filter(function(o){return o.cat===s.cat && o.slug!==s.slug;}).slice(0,4);
+  var team = DOC(state.lang).filter(function(d){return d.tags.indexOf(s.slug)>-1;});
+  return '<div class="page-head wrap"><nav class="crumbs"><a href="'+href("")+'">'+esc(L.home)+'</a> / '+
+      '<a href="'+href("services")+'">'+esc(L.nav[2][1])+'</a> / '+esc(s.title)+'</nav>'+
+    '<p class="eyebrow">'+esc(s.cat)+'</p>'+
+    '<h1 class="h2" style="font-size:var(--step-5);max-width:12ch">'+esc(s.title)+'</h1>'+
+    '<p class="lede prose" style="margin-top:1.4rem;font-size:var(--step-1)">'+esc(s.short)+'</p></div>'+
+  '<section class="sec" style="padding-top:clamp(1rem,3vh,2rem)"><div class="wrap split">'+
+    '<div class="rv detail-body prose"><h3 style="margin-top:0">'+esc(L.overview)+'</h3>'+
+      s.body.map(function(p){return '<p class="lede">'+esc(p)+'</p>';}).join("")+
+      (s.list.length?'<h3>'+esc(s.listTitle)+'</h3><ul>'+s.list.map(function(x){
+        return '<li>'+esc(x)+'</li>';}).join("")+'</ul>':'')+
+      (team.length?'<h3>'+esc(L.careTeam)+'</h3><div class="chips">'+team.map(function(d){
+        return '<a class="chip" href="'+href("doctors",d.id)+'">'+esc(d.unnamed?L.unnamedDoc:d.name)+'</a>';}).join("")+'</div>':'')+
+    '</div>'+
+    '<aside class="rv"><div class="aside-card">'+
+      '<figure class="story-art" style="aspect-ratio:1/1;margin:0"><svg viewBox="0 0 200 200" aria-hidden="true">'+
+        (function(){var o="",n=9;for(var k=0;k<n;k++)o+='<path class="petal" d="'+petalPath(k,n,22,82,100,100)+'"/>';
+         return o+'<circle class="disc" cx="100" cy="100" r="16"/>';})()+'</svg></figure>'+
+      '<a class="btn" href="'+href("appointment")+'">'+esc(L.bookThis)+'</a>'+
+      '<a class="btn ghost" href="'+SITE.phoneHref+'" dir="ltr">'+SITE.phone+'</a>'+
+      (related.length?'<div style="border-top:1px solid var(--line);padding-top:1rem"><h4 style="font-family:var(--body);font-size:.72rem;letter-spacing:.16em;color:var(--ink-mute);margin-bottom:.8rem">'+esc(L.relatedSvc)+'</h4>'+
+        '<div style="display:grid;gap:.5rem">'+related.map(function(r){
+          return '<a href="'+href("services",r.slug)+'" style="font-size:var(--step--1);color:var(--ink-soft)">'+esc(r.title)+'</a>';}).join("")+'</div></div>':'')+
+    '</div></aside>'+
+  '</div></section>'+apptBlock();
+}
+
+function vDoctors(){
+  var L=t();
+  return '<div class="page-head wrap"><nav class="crumbs"><a href="'+href("")+'">'+esc(L.home)+'</a> / '+esc(L.nav[3][1])+'</nav>'+
+    '<h1 class="h2" style="font-size:var(--step-5);max-width:12ch">'+esc(L.docTitle)+'</h1>'+
+    '<p class="lede prose" style="margin-top:1.4rem;font-size:var(--step-1)">'+esc(L.docLede)+'</p></div>'+
+  '<section class="sec" style="padding-top:0"><div class="wrap">'+
+    '<div class="docs rv">'+DOC(state.lang).map(docCard).join("")+'</div></div></section>'+apptBlock();
+}
+
+function vDoctor(id){
+  var L=t(), list=DOC(state.lang), d=null,i;
+  for(i=0;i<list.length;i++) if(list[i].id===id) d=list[i];
+  if(!d) return v404();
+  var svc=SVC(state.lang).filter(function(s){return d.tags.indexOf(s.slug)>-1;});
+  var nm = d.unnamed ? L.unnamedDoc : d.name;
+  return '<div class="page-head wrap"><nav class="crumbs"><a href="'+href("")+'">'+esc(L.home)+'</a> / '+
+      '<a href="'+href("doctors")+'">'+esc(L.nav[3][1])+'</a> / '+esc(nm)+'</nav></div>'+
+  '<section class="sec" style="padding-top:0"><div class="wrap split narrow-first">'+
+    '<div class="rv"><div class="doc-portrait media" data-init="'+esc(initials(d.name))+'" style="aspect-ratio:4/5">'+
+      pic(MEDIA.doctors[d.id]||"", nm+" — "+d.spec, d.id.length*7+d.spec.length, 4,5)+'</div></div>'+
+    '<div class="rv detail-body">'+
+      '<p class="eyebrow">'+esc(L.docEye)+'</p>'+
+      '<h1 class="h2" style="font-size:var(--step-4);max-width:14ch">'+esc(nm)+'</h1>'+
+      '<p class="lede" style="margin-top:1.2rem;font-size:var(--step-1)">'+esc(d.spec)+'</p>'+
+      '<p class="note" style="margin-top:1.8rem;max-width:56ch;border-inline-start:1px solid var(--champagne);padding-inline-start:1rem">'+
+        esc(d.unnamed?L.unnamedNote:L.docBioNote)+'</p>'+
+      (svc.length?'<h3>'+esc(L.docRelated)+'</h3><div class="chips">'+svc.map(function(s){
+        return '<a class="chip" href="'+href("services",s.slug)+'">'+esc(s.title)+'</a>';}).join("")+'</div>':'')+
+      '<div class="hero-cta"><a class="btn" href="'+href("appointment")+'">'+esc(L.book)+'</a>'+
+        '<a class="btn ghost" href="'+href("doctors")+'">'+esc(L.docAll)+'</a></div>'+
+    '</div></div></section>';
+}
+
+function vGallery(){
+  var L=t();
+  return '<div class="page-head wrap"><nav class="crumbs"><a href="'+href("")+'">'+esc(L.home)+'</a> / '+esc(L.nav[4][1])+'</nav>'+
+    '<h1 class="h2" style="font-size:var(--step-5)">'+esc(L.galTitle)+'</h1>'+
+    '<p class="lede prose" style="margin-top:1.4rem;font-size:var(--step-1)">'+esc(L.galLede)+'</p></div>'+
+  '<section class="sec" style="padding-top:0"><div class="wrap">'+
+    '<div class="gal" id="gal">'+galTiles(MEDIA.gallery.length)+'</div>'+
+    '<p class="note" style="margin-top:1.6rem;max-width:64ch">'+esc(L.galNote)+'</p></div></section>';
+}
+
+function vBlog(){
+  var L=t();
+  return '<div class="page-head wrap"><nav class="crumbs"><a href="'+href("")+'">'+esc(L.home)+'</a> / '+esc(L.nav[5][1])+'</nav>'+
+    '<h1 class="h2" style="font-size:var(--step-5)">'+esc(L.blogTitle)+'</h1></div>'+
+  '<section class="sec" style="padding-top:0"><div class="wrap">'+
+    '<div class="empty rv"><span class="h">'+esc(L.blogEmptyH)+'</span>'+
+      '<p class="lede">'+esc(L.blogEmptyB)+'</p>'+
+      '<p style="margin-top:.6rem"><a class="btn ghost" href="'+href("services")+'">'+esc(L.explore)+'</a></p></div>'+
+  '</div></section>';
+}
+
+function vContact(){
+  var L=t();
+  return '<div class="page-head wrap"><nav class="crumbs"><a href="'+href("")+'">'+esc(L.home)+'</a> / '+esc(L.nav[6][1])+'</nav>'+
+    '<h1 class="h2" style="font-size:var(--step-5);max-width:12ch">'+esc(L.contactTitle)+'</h1></div>'+
+  contactBlock()+apptBlock()+faqBlock();
+}
+function vAppt(){
+  var L=t();
+  return '<div class="page-head wrap"><nav class="crumbs"><a href="'+href("")+'">'+esc(L.home)+'</a> / '+esc(L.book)+'</nav>'+
+    '<h1 class="h2" style="font-size:var(--step-5);max-width:12ch">'+esc(L.apptTitle)+'</h1></div>'+
+  apptBlock()+contactBlock();
+}
+function v404(){
+  var L=t();
+  return '<div class="page-head wrap" style="min-height:60svh"><h1 class="h2" style="font-size:var(--step-4);max-width:16ch">'+esc(L.notFoundT)+'</h1>'+
+    '<p class="lede prose" style="margin-top:1.2rem">'+esc(L.notFoundB)+'</p>'+
+    '<p style="margin-top:2rem"><a class="btn" href="'+href("")+'">'+esc(L.backTo)+' '+esc(L.home)+'</a></p></div>';
+}
+
+/* ---------------------------------------------------------------- SEO */
+var META = {
+  en:{ "":["Kadina Medical Center — Cosmetic Dermatology, Laser & Plastic Surgery in Riyadh","A full range of surgical and non-surgical cosmetic procedures, under one roof in Riyadh."],
+       about:["About Kadina Medical Center — Riyadh","Established in Riyadh in 2013. Our mission, vision and the story behind the Kadina name."],
+       services:["Services — Kadina Medical Center","Dermatology, hair loss, laser therapy, cosmetic surgery, injections and more."],
+       doctors:["Our Doctors — Kadina Medical Center","Consultant dermatologists, laser specialists and plastic surgeons in Riyadh."],
+       gallery:["Gallery — Kadina Medical Center","Inside Kadina Medical Center, Riyadh."],
+       blog:["Journal — Kadina Medical Center","Writing from Kadina Medical Center."],
+       contact:["Contact — Kadina Medical Center, Riyadh","Phone +966 11 455 5444. Riyadh, North Ring Road. Monday to Friday, 9am to 10pm."],
+       appointment:["Book an Appointment — Kadina Medical Center","Request an appointment at Kadina Medical Center in Riyadh."] },
+  ar:{ "":["مركز كادينا الطبي — جلدية وليزر وجراحة تجميل في الرياض","مجموعة متكاملة من الإجراءات التجميلية الجراحية وغير الجراحية تحت سقف واحد في الرياض."],
+       about:["عن مركز كادينا الطبي — الرياض","تأسّس في الرياض عام 2013. رسالتنا ورؤيتنا وقصة اسم كادينا."],
+       services:["الخدمات — مركز كادينا الطبي","الجلدية وتساقط الشعر والعلاج بالليزر وجراحة التجميل والحقن وغيرها."],
+       doctors:["أطباؤنا — مركز كادينا الطبي","استشاريو الجلدية والليزر وجراحة التجميل في الرياض."],
+       gallery:["المعرض — مركز كادينا الطبي","من داخل مركز كادينا الطبي بالرياض."],
+       blog:["المدونة — مركز كادينا الطبي","كتابات من مركز كادينا الطبي."],
+       contact:["تواصل معنا — مركز كادينا الطبي، الرياض","هاتف ‎+966 11 455 5444. الرياض، الطريق الدائري الشمالي. الإثنين إلى الجمعة 9 ص – 10 م."],
+       appointment:["احجز موعدك — مركز كادينا الطبي","اطلب موعداً في مركز كادينا الطبي بالرياض."] }
+};
+function setMeta(){
+  var m = (META[state.lang]||META.en)[state.view];
+  var title,desc;
+  if(state.view==="services" && state.param){
+    var s=SVC(state.lang).filter(function(o){return o.slug===state.param;})[0];
+    if(s){ title=s.title+" — "+(state.lang==="ar"?"مركز كادينا الطبي":"Kadina Medical Center"); desc=s.short; }
+  } else if(state.view==="doctors" && state.param){
+    var d=DOC(state.lang).filter(function(o){return o.id===state.param;})[0];
+    if(d){ title=(d.unnamed?t().unnamedDoc:d.name)+" — "+(state.lang==="ar"?"مركز كادينا الطبي":"Kadina Medical Center"); desc=d.spec; }
+  }
+  if(!title && m){ title=m[0]; desc=m[1]; }
+  if(title) document.title=title;
+  if(desc){
+    var dm=document.querySelector('meta[name="description"]'); if(dm) dm.setAttribute("content",desc);
+    var og=document.querySelector('meta[property="og:description"]'); if(og) og.setAttribute("content",desc);
+  }
+  var ot=document.querySelector('meta[property="og:title"]'); if(ot&&title) ot.setAttribute("content",title);
+  var ol=document.querySelector('meta[property="og:locale"]'); if(ol) ol.setAttribute("content",state.lang==="ar"?"ar_SA":"en_US");
+  var cn=document.querySelector('link[rel="canonical"]');
+  if(cn) cn.setAttribute("href","https://kadina.com.sa/"+state.lang+"/"+state.view+(state.param?"/"+state.param:""));
+}
+
+/* ---------------------------------------------------------------- RENDER */
+var scenes=[];
+function disposeScenes(){ scenes.forEach(function(f){ try{f();}catch(e){} }); scenes=[]; }
+function initScenes(){
+  if($("#scene")) scenes.push(heroScene($("#scene")));
+  if($("#svcstage")) scenes.push(serviceScene($("#svcstage")));
+}
+
+function render(){
+  var r=parseHash();
+  var langChanged = r.lang!==state.lang;
+  state.lang=r.lang; state.view=r.view; state.param=r.param;
+
+  disposeScenes();
+  renderChrome();
+  setMeta();
+
+  var html;
+  switch(state.view){
+    case "": html=vHome(); break;
+    case "about": html=vAbout(); break;
+    case "services": html = state.param?vService(state.param):vServices(); break;
+    case "doctors": html = state.param?vDoctor(state.param):vDoctors(); break;
+    case "gallery": html=vGallery(); break;
+    case "blog": html=vBlog(); break;
+    case "contact": html=vContact(); break;
+    case "appointment": html=vAppt(); break;
+    default: html=v404();
+  }
+  lastHash=location.hash;
+  $("#main").innerHTML=html;
+  wire();
+  window.scrollTo(0,0);
+  var h1=$("#main h1"); if(h1){ h1.setAttribute("tabindex","-1"); }
+}
+
+/* ---------------------------------------------------------------- WIRING */
+function wire(){
+  observe();
+  countUp();
+  accordion();
+  gallery();
+  form();
+  attachImages($("#main"));
+  initScenes();
+  hoverTargets();
+}
+
+function observe(){
+  var els=$$(".rv");
+  if(RM || !("IntersectionObserver" in window)){ els.forEach(function(e){e.classList.add("in");}); return; }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  },{rootMargin:"0px 0px -8% 0px",threshold:.08});
+  els.forEach(function(e){io.observe(e);});
+}
+
+function countUp(){
+  var box=$("#stats"); if(!box) return;
+  var nums=$$("b[data-to]",box);
+  var run=function(){
+    nums.forEach(function(n){
+      var to=parseInt(n.getAttribute("data-to"),10);
+      if(RM){ n.textContent=to.toLocaleString(state.lang==="ar"?"ar-EG":"en-US"); return; }
+      var st=null,dur=1500;
+      var step=function(ts){
+        if(!st) st=ts;
+        var p=Math.min((ts-st)/dur,1), e=1-Math.pow(1-p,3);
+        n.textContent=Math.round(to*e).toLocaleString(state.lang==="ar"?"ar-EG":"en-US");
+        if(p<1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  };
+  if(!("IntersectionObserver" in window)){ run(); return; }
+  var io=new IntersectionObserver(function(en){
+    if(en[0].isIntersecting){ run(); io.disconnect(); }
+  },{threshold:.35});
+  io.observe(box);
+}
+
+function accordion(){
+  $$("#acc .acc-q").forEach(function(q){
+    q.addEventListener("click",function(){
+      var item=q.parentNode, open=item.classList.contains("open");
+      $$("#acc .acc-item").forEach(function(it){
+        it.classList.remove("open");
+        it.querySelector(".acc-q").setAttribute("aria-expanded","false");
+        it.querySelector(".acc-a").style.maxHeight="0px";
+      });
+      if(!open){
+        item.classList.add("open");
+        q.setAttribute("aria-expanded","true");
+        var a=item.querySelector(".acc-a");
+        a.style.maxHeight=a.scrollHeight+"px";
+      }
+    });
+  });
+}
+
+function gallery(){
+  var box=$("#gal"); if(!box) return;
+  var figs=$$("figure",box), cur=0, lb=$("#light");
+  function show(i){
+    cur=(i+figs.length)%figs.length;
+    var f=figs[cur], im=f.querySelector("img.loaded");
+    if(im){
+      $("#lframe").innerHTML='<img src="'+im.getAttribute("src")+'" alt="'+(im.getAttribute("alt")||"")+'">';
+    }else{
+      $("#lframe").innerHTML=f.querySelector("svg").outerHTML;
+      $("#lframe").firstChild.removeAttribute("class");
+    }
+    $("#lcap").textContent=f.querySelector("figcaption").textContent;
+    $("#lidx").textContent=(cur+1)+" / "+figs.length;
+    lb.classList.add("on"); $("#lx").focus();
+  }
+  function close(){ lb.classList.remove("on"); }
+  $$("button[data-g]",box).forEach(function(b){
+    b.addEventListener("click",function(){ show(parseInt(b.getAttribute("data-g"),10)); });
+  });
+  $("#lx").onclick=close;
+  $("#lp").onclick=function(){show(cur-1);};
+  $("#ln").onclick=function(){show(cur+1);};
+  lb.onclick=function(e){ if(e.target===lb) close(); };
+  document.onkeydown=function(e){
+    if(!lb.classList.contains("on")) return;
+    if(e.key==="Escape") close();
+    if(e.key==="ArrowRight") show(document.dir==="rtl"?cur-1:cur+1);
+    if(e.key==="ArrowLeft") show(document.dir==="rtl"?cur+1:cur-1);
+  };
+  /* touch swipe */
+  var sx=0;
+  lb.addEventListener("touchstart",function(e){sx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener("touchend",function(e){
+    var dx=e.changedTouches[0].clientX-sx;
+    if(Math.abs(dx)>50) show(dx<0?cur+1:cur-1);
+  },{passive:true});
+}
+
+function form(){
+  var f=$("#apptform"); if(!f) return;
+  var pre = (state.view==="services" && state.param) ? state.param : null;
+  if(pre){ var sel=$("#f4",f); if(sel) sel.value=pre; }
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var ok=true;
+    ["f1","f2"].forEach(function(id){
+      var el=$("#"+id,f);
+      if(!el.value.trim()){ ok=false; el.style.borderBottomColor="var(--champagne)"; }
+      else el.style.borderBottomColor="";
+    });
+    var st=$("#apptstate");
+    /* INTEGRATION POINT — no booking backend exists on kadina.com.sa.
+       Replace this block with a POST to the centre's scheduling endpoint. */
+    st.textContent = ok ? t().formOk : (state.lang==="ar"?"يرجى إدخال الاسم ورقم الجوال.":"Please enter a name and a phone number.");
+    st.classList.add("on");
+    st.scrollIntoView({behavior:RM?"auto":"smooth",block:"center"});
+  });
+}
+
+/* ---------------------------------------------------------------- CURSOR */
+(function(){
+  if(COARSE||RM) return;
+  var d=$("#cursor"), r=$("#cursor-ring"), x=0,y=0,rx=0,ry=0,on=false;
+  window.addEventListener("mousemove",function(e){
+    x=e.clientX;y=e.clientY;
+    if(!on){on=true;document.body.classList.add("cursor-on");}
+    d.style.transform="translate("+x+"px,"+y+"px)";
+  },{passive:true});
+  (function loop(){ rx+=(x-rx)*.16; ry+=(y-ry)*.16;
+    r.style.transform="translate("+rx+"px,"+ry+"px)"; requestAnimationFrame(loop); })();
+  document.addEventListener("mouseleave",function(){document.body.classList.remove("cursor-on");});
+  document.addEventListener("mouseenter",function(){if(on)document.body.classList.add("cursor-on");});
+})();
+function hoverTargets(){
+  if(COARSE||RM) return;
+  var b=document.body;
+  $$("a,button,input,select,textarea").forEach(function(el){
+    el.addEventListener("mouseenter",function(){ b.classList.add("c-link"); });
+    el.addEventListener("mouseleave",function(){ b.classList.remove("c-link"); });
+  });
+  $$(".gal figure,.doc-portrait,.map").forEach(function(el){
+    el.addEventListener("mouseenter",function(){ b.classList.add("c-media"); });
+    el.addEventListener("mouseleave",function(){ b.classList.remove("c-media"); });
+  });
+}
+
+/* ---------------------------------------------------------------- NAV UI */
+(function(){
+  var nav=$("#nav"), menu=$("#menu"), burger=$("#burger");
+  var onScroll=function(){ nav.classList.toggle("compact", window.scrollY>28); };
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  function toggleMenu(open){
+    menu.classList.toggle("open",open);
+    menu.setAttribute("aria-hidden",String(!open));
+    burger.setAttribute("aria-expanded",String(open));
+    document.body.style.overflow=open?"hidden":"";
+    if(open) menu.querySelector(".m-nav a").focus();
+  }
+  burger.onclick=function(){ toggleMenu(!menu.classList.contains("open")); };
+  $("#mclose").onclick=function(){ toggleMenu(false); burger.focus(); };
+  menu.addEventListener("click",function(e){ if(e.target.closest("a")) toggleMenu(false); });
+  window.addEventListener("keydown",function(e){
+    if(e.key==="Escape" && menu.classList.contains("open")) { toggleMenu(false); burger.focus(); }
+  });
+})();
+
+/* ---------------------------------------------------------------- 3D: HERO
+   An abstract translucent sculpture: twelve petals of the Cady flower,
+   a pearl core, and a low count of drifting motes. Not a human figure. */
+function envMap(renderer){
+  var dark=isDark();
+  var c=document.createElement("canvas"); c.width=512; c.height=256;
+  var g=c.getContext("2d");
+  var grad=g.createLinearGradient(0,0,0,256);
+  if(dark){
+    /* night studio: one soft overhead source, everything else falls away */
+    grad.addColorStop(0,"#5d5f50"); grad.addColorStop(.38,"#33352c");
+    grad.addColorStop(.66,"#1b1d16"); grad.addColorStop(1,"#0a0b07");
+  }else{
+    grad.addColorStop(0,"#ffffff"); grad.addColorStop(.42,"#f3efe6");
+    grad.addColorStop(.62,"#d9d3c4"); grad.addColorStop(1,"#8f907f");
+  }
+  g.fillStyle=grad; g.fillRect(0,0,512,256);
+  var warm=g.createRadialGradient(150,70,5,150,70,160);
+  warm.addColorStop(0, dark?"rgba(255,232,186,.55)":"rgba(255,246,225,.95)");
+  warm.addColorStop(1,"rgba(255,246,225,0)");
+  g.fillStyle=warm; g.fillRect(0,0,512,256);
+  var cool=g.createRadialGradient(390,130,5,390,130,170);
+  cool.addColorStop(0, dark?"rgba(140,168,146,.35)":"rgba(190,205,192,.7)");
+  cool.addColorStop(1,"rgba(190,205,192,0)");
+  g.fillStyle=cool; g.fillRect(0,0,512,256);
+  var tex=new THREE.CanvasTexture(c);
+  tex.mapping=THREE.EquirectangularReflectionMapping;
+  var pm=new THREE.PMREMGenerator(renderer); pm.compileEquirectangularShader();
+  var env=pm.fromEquirectangular(tex).texture;
+  tex.dispose(); pm.dispose();
+  return env;
+}
+function petalGeometry(){
+  var sh=new THREE.Shape();
+  sh.moveTo(0,0);
+  sh.bezierCurveTo(0.42,0.30, 0.34,1.15, 0,1.62);
+  sh.bezierCurveTo(-0.34,1.15,-0.42,0.30, 0,0);
+  return new THREE.ExtrudeGeometry(sh,{
+    depth:0.055, bevelEnabled:true, bevelThickness:0.05, bevelSize:0.055,
+    bevelSegments:3, curveSegments:MOBILE?12:22
+  });
+}
+function makeRenderer(el,alpha){
+  var c=document.createElement("canvas");
+  var gl=c.getContext("webgl2")||c.getContext("webgl")||c.getContext("experimental-webgl");
+  if(!gl) return null;
+  var r;
+  try{
+    r=new THREE.WebGLRenderer({canvas:c,antialias:!MOBILE,alpha:alpha!==false,powerPreference:"high-performance"});
+  }catch(e){ return null; }
+  r.setPixelRatio(Math.min(window.devicePixelRatio||1, MOBILE?1.4:1.85));
+  r.outputEncoding=THREE.sRGBEncoding;
+  r.toneMapping=THREE.ACESFilmicToneMapping;
+  r.toneMappingExposure=1.02;
+  el.appendChild(c);
+  return r;
+}
+function heroScene(el){
+  if(RM) return function(){};                       /* reduced motion: gradient only */
+  var renderer=makeRenderer(el,true);
+  if(!renderer) return function(){};                /* no WebGL: gradient fallback shows */
+
+  var scene=new THREE.Scene();
+  var cam=new THREE.PerspectiveCamera(36,1,.1,100);
+  cam.position.set(0,0,9.2);
+  var env=envMap(renderer); scene.environment=env;
+
+  var group=new THREE.Group(); scene.add(group);
+  var flower=new THREE.Group(); group.add(flower);
+
+  var dark=isDark();
+  var pearl=new THREE.MeshPhysicalMaterial({
+    color: dark?0xd9d2c2:0xf7f2e9, roughness:.22, metalness:0, clearcoat:1, clearcoatRoughness:.22,
+    transparent:true, opacity: dark?.82:.9, side:THREE.DoubleSide, envMapIntensity: dark?1.5:1.15
+  });
+  var leaf=new THREE.MeshPhysicalMaterial({
+    color: dark?0x78896f:0xa9b8a8, roughness:.3, metalness:0, clearcoat:.8, clearcoatRoughness:.3,
+    transparent:true, opacity: dark?.66:.72, side:THREE.DoubleSide, envMapIntensity: dark?1.35:1
+  });
+
+  var pg=petalGeometry();
+  var rings=[{n:MOBILE?7:9,r:1.55,tilt:.58,sc:1.5,m:pearl},
+             {n:MOBILE?6:8,r:1.0,tilt:1.02,sc:1.05,m:leaf}];
+  rings.forEach(function(ring,ri){
+    for(var i=0;i<ring.n;i++){
+      var p=new THREE.Mesh(pg,ring.m);
+      var a=(i/ring.n)*Math.PI*2 + ri*0.4;
+      p.scale.setScalar(ring.sc);
+      p.rotation.z=-a;
+      p.rotation.x=ring.tilt;
+      p.position.set(Math.cos(a)*ring.r*0.18,Math.sin(a)*ring.r*0.18,ri*-0.22);
+      p.userData.base=p.rotation.x;
+      p.userData.ph=i*0.5+ri;
+      flower.add(p);
+    }
+  });
+  var core=new THREE.Mesh(
+    new THREE.SphereGeometry(.62,MOBILE?26:44,MOBILE?18:32),
+    new THREE.MeshPhysicalMaterial({color: dark?0xe6e0d0:0xffffff,roughness:.06,metalness:0,
+      clearcoat:1,clearcoatRoughness:.04,transparent:true,opacity: dark?.5:.62,
+      envMapIntensity: dark?2.1:1.6})
+  );
+  flower.add(core);
+  var ring=new THREE.Mesh(
+    new THREE.TorusGeometry(2.55,.012,8,MOBILE?64:128),
+    new THREE.MeshStandardMaterial({color: dark?0xd6b87e:0xbfa36b,roughness:.3,metalness:.85,
+      envMapIntensity: dark?1.9:1.3})
+  );
+  ring.rotation.x=Math.PI*.46; group.add(ring);
+
+  /* motes — deliberately few */
+  var N=MOBILE?90:200, pos=new Float32Array(N*3);
+  for(var i=0;i<N;i++){
+    var rr=2.4+Math.random()*4.2, th=Math.random()*Math.PI*2, ph=Math.acos(2*Math.random()-1);
+    pos[i*3]=rr*Math.sin(ph)*Math.cos(th); pos[i*3+1]=rr*Math.sin(ph)*Math.sin(th)*.6; pos[i*3+2]=rr*Math.cos(ph)*.5;
+  }
+  var pgeo=new THREE.BufferGeometry();
+  pgeo.setAttribute("position",new THREE.BufferAttribute(pos,3));
+  var motes=new THREE.Points(pgeo,new THREE.PointsMaterial({
+    color: dark?0xcfd6c6:0x9aa79a, size:.035, transparent:true, opacity: dark?.42:.5,
+    sizeAttenuation:true, depthWrite:false}));
+  scene.add(motes);
+
+  scene.add(new THREE.AmbientLight(0xfff6e8, dark?.18:.5));
+  var key=new THREE.DirectionalLight(0xfff4e2, dark?1.5:1.15); key.position.set(3.2,4,5); scene.add(key);
+  var rim=new THREE.DirectionalLight(0xc9d6c6, dark?.85:.6); rim.position.set(-4,-1.6,-3); scene.add(rim);
+
+  var mx=0,my=0,tx=0,ty=0,scrollN=0,alive=true;
+  function onMove(e){
+    var w=window.innerWidth,h=window.innerHeight;
+    tx=(e.clientX/w-.5)*2; ty=(e.clientY/h-.5)*2;
+  }
+  function onScroll(){ scrollN=Math.min(window.scrollY/Math.max(window.innerHeight,1),1.6); }
+  if(!COARSE) window.addEventListener("mousemove",onMove,{passive:true});
+  window.addEventListener("scroll",onScroll,{passive:true});
+
+  var baseY=.35;
+  function size(){
+    var w=el.clientWidth||1,h=el.clientHeight||1;
+    renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix();
+    baseY = w/h > 1.15 ? .35 : 1.5;
+    /* Keep the sculpture off the copy. The copy sits on the leading edge,
+       so in Arabic the sculpture moves to the left, not just mirrored CSS. */
+    var wide = w/h > 1.15;
+    var side = (document.documentElement.dir === "rtl") ? -1 : 1;
+    group.position.x = wide ? 2.15 * side : 0;
+    group.position.y = wide ? .35 : 1.5;
+    group.scale.setScalar(wide ? 1 : .78);
+  }
+  var ro = window.ResizeObserver ? new ResizeObserver(size) : null;
+  if(ro) ro.observe(el); else window.addEventListener("resize",size);
+  size();
+
+  var visible=true;
+  var vio = ("IntersectionObserver" in window) ? new IntersectionObserver(function(en){
+    visible=en[0].isIntersecting;
+  },{threshold:.01}) : null;
+  if(vio) vio.observe(el);
+
+  var t0=performance.now();
+  (function loop(now){
+    if(!alive) return;
+    requestAnimationFrame(loop);
+    if(!visible || document.hidden) return;
+    var e=(now-t0)/1000;
+    mx+=(tx-mx)*.045; my+=(ty-my)*.045;
+
+    flower.rotation.z = e*0.075;
+    flower.rotation.x = -0.22 + my*0.16 + Math.sin(e*.33)*.035;
+    flower.rotation.y = mx*0.22*((document.documentElement.dir==="rtl")?-1:1);
+
+    flower.children.forEach(function(p){
+      if(p.userData.base===undefined) return;
+      p.rotation.x = p.userData.base + Math.sin(e*.6+p.userData.ph)*.055 + scrollN*.34;
+    });
+    core.scale.setScalar(1+Math.sin(e*.85)*.022);
+    ring.rotation.z = -e*0.11;
+    ring.rotation.y = mx*0.12;
+    motes.rotation.y = e*0.018;
+    motes.rotation.x = my*0.05;
+
+    /* scroll choreography: the sculpture recedes and lifts as the story begins */
+    group.position.z = -scrollN*3.4;
+    group.rotation.z = scrollN*0.18;
+    group.position.y = baseY + scrollN*1.1;
+    cam.position.x = mx*0.28; cam.position.y = -my*0.2;
+    cam.lookAt(0,0,0);
+
+    renderer.render(scene,cam);
+  })(t0);
+
+  return function(){
+    alive=false;
+    if(ro) ro.disconnect(); else window.removeEventListener("resize",size);
+    if(vio) vio.disconnect();
+    window.removeEventListener("mousemove",onMove);
+    window.removeEventListener("scroll",onScroll);
+    pg.dispose(); pgeo.dispose(); env.dispose();
+    scene.traverse(function(o){ if(o.geometry) o.geometry.dispose(); if(o.material) o.material.dispose(); });
+    renderer.dispose();
+    if(renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
+  };
+}
+
+/* ---------------------------------------------------------------- 3D: SERVICES
+   One calm object that answers the row you are on. Colour and facet density
+   shift by category; nothing flashes. */
+var CAT_COLOR = {
+  "Skin":0xe8dccb, "البشرة":0xe8dccb,
+  "Hair":0xcfd6c8, "الشعر":0xcfd6c8,
+  "Laser":0xdcd3e0, "الليزر":0xdcd3e0,
+  "Surgery":0xd6dde4, "الجراحة":0xd6dde4,
+  "Technology":0xe3dcc6, "التقنيات":0xe3dcc6,
+  "Injectables":0xe6d8cf, "الحقن":0xe6d8cf
+};
+function serviceScene(el){
+  if(RM) { el.style.background="radial-gradient(60% 55% at 50% 45%,var(--pearl),rgba(125,143,128,.16))"; return function(){}; }
+  var renderer=makeRenderer(el,true);
+  if(!renderer){ el.style.background="radial-gradient(60% 55% at 50% 45%,var(--pearl),rgba(125,143,128,.16))"; return function(){}; }
+
+  var scene=new THREE.Scene();
+  var cam=new THREE.PerspectiveCamera(34,1,.1,60); cam.position.set(0,0,6.4);
+  var env=envMap(renderer); scene.environment=env;
+
+  var dark=isDark();
+  var mat=new THREE.MeshPhysicalMaterial({
+    color:0xe8dccb, roughness:.16, metalness:.04, clearcoat:1, clearcoatRoughness:.12,
+    transparent:true, opacity:.94, envMapIntensity: dark?1.75:1.35, flatShading:true
+  });
+  var geo=new THREE.IcosahedronGeometry(1.72, MOBILE?1:2);
+  var obj=new THREE.Mesh(geo,mat); scene.add(obj);
+
+  var wire=new THREE.Mesh(
+    new THREE.IcosahedronGeometry(2.24,1),
+    new THREE.MeshBasicMaterial({color: dark?0xd6b87e:0xbfa36b, wireframe:true,
+      transparent:true, opacity: dark?.2:.14})
+  );
+  scene.add(wire);
+
+  scene.add(new THREE.AmbientLight(0xfff6ea, dark?.2:.55));
+  var l1=new THREE.DirectionalLight(0xffffff, dark?1.35:1.05); l1.position.set(2.6,3.4,4.2); scene.add(l1);
+  var l2=new THREE.DirectionalLight(0xbcc8ba, dark?.75:.5); l2.position.set(-3,-2,-2); scene.add(l2);
+
+  var target=new THREE.Color(0xe8dccb), spin=1, alive=true, hoverBoost=0;
+  var rows=$$(".svc-row",document);
+  function setCat(cat){
+    var c=CAT_COLOR[cat];
+    if(c){ target.setHex(c); if(dark) target.multiplyScalar(.82); }
+    hoverBoost=1;
+  }
+  rows.forEach(function(r){
+    var enter=function(){ rows.forEach(function(x){x.classList.remove("active");});
+      r.classList.add("active"); setCat(r.getAttribute("data-cat")); };
+    r.addEventListener("mouseenter",enter);
+    r.addEventListener("focus",enter);
+  });
+
+  function size(){ var w=el.clientWidth||1,h=el.clientHeight||1;
+    renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix(); }
+  var ro=window.ResizeObserver?new ResizeObserver(size):null;
+  if(ro) ro.observe(el); else window.addEventListener("resize",size);
+  size();
+
+  var visible=true;
+  var vio=("IntersectionObserver" in window)?new IntersectionObserver(function(en){visible=en[0].isIntersecting;},{threshold:.02}):null;
+  if(vio) vio.observe(el);
+
+  var t0=performance.now();
+  (function loop(now){
+    if(!alive) return;
+    requestAnimationFrame(loop);
+    if(!visible||document.hidden) return;
+    var e=(now-t0)/1000;
+    hoverBoost*=0.955;
+    obj.rotation.y = e*0.16*spin;
+    obj.rotation.x = Math.sin(e*0.28)*0.22;
+    obj.scale.setScalar(1+hoverBoost*0.05+Math.sin(e*0.7)*0.01);
+    wire.rotation.y = -e*0.07;
+    wire.rotation.z = e*0.04;
+    mat.color.lerp(target,0.055);
+    renderer.render(scene,cam);
+  })(t0);
+
+  return function(){
+    alive=false;
+    if(ro) ro.disconnect(); else window.removeEventListener("resize",size);
+    if(vio) vio.disconnect();
+    geo.dispose(); mat.dispose(); env.dispose();
+    scene.traverse(function(o){ if(o.geometry) o.geometry.dispose(); if(o.material) o.material.dispose(); });
+    renderer.dispose();
+    if(renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
+  };
+}
+
+/* ---------------------------------------------------------------- TRANSITIONS */
+var veil=$("#veil"), first=true, lastHash=null;
+function navigate(){
+  if(location.hash===lastHash) return;
+  if(first || RM){ render(); first=false; return; }
+  veil.classList.remove("out"); veil.classList.add("in");
+  setTimeout(function(){
+    render();
+    veil.classList.remove("in"); veil.classList.add("out");
+  },420);
+}
+window.addEventListener("hashchange",navigate);
+
+/* ---------------------------------------------------------------- BOOT */
+function boot(){
+  if(!location.hash) location.replace("#/en/");
+  render(); first=false;
+  var bar=$("#lbar"), p=0;
+  var tick=setInterval(function(){
+    p=Math.min(p+18+Math.random()*22,100); bar.style.width=p+"%";
+    if(p>=100){ clearInterval(tick);
+      setTimeout(function(){ $("#loader").classList.add("done");
+        setTimeout(function(){ var l=$("#loader"); if(l&&l.parentNode) l.parentNode.removeChild(l); },900);
+      },RM?0:340);
+    }
+  },RM?1:180);
+}
+if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",boot);
+else boot();
+})();
+</script>
+</body>
+</html>
